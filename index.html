@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="New Roots × Your Agency">
+<meta property="og:description" content="Смотри, что я придумал для New Roots: слоган, стиль, рубрики и демо-рилс">
+<meta property="og:image" content="https://osho4753.github.io/newroots/img/cover.jpg">
+<title>New Roots: идеи для запуска</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap">
+<style>
+  /* Layout: питч-сторис для New Roots, написан как другу. Тихий премиум: бумага, двойные рамки, бордовый из логотипа, чистая олива, терракота точкой. */
+  :root {
+    color-scheme: light;
+    --rose: #6b0b0c; --rose2: #84231f; --olive: #6f6b34; --olive-d: #4c4a24; --cream: #f1e6d0; --paper: #f7f0e1; --terra: #b4502a; --esp: #2e2118; --sage: #b8b48c;
+    --esp-dim: rgba(46, 33, 24, 0.7); --line: rgba(107, 11, 12, 0.22); --cream-dim: rgba(241, 230, 208, 0.78); --cline: rgba(241, 230, 208, 0.28);
+    --sans: "Golos Text", "Helvetica Neue", Arial, sans-serif;
+    --serif: "Cormorant Garamond", Georgia, serif;
+  }
+  html, body { height: 100%; margin: 0; }
+  body { background: #e6dcc6; color: var(--esp); font-family: var(--sans); overflow: hidden; }
+  .grain { position: fixed; inset: 0; pointer-events: none; opacity: 0.16; mix-blend-mode: multiply; z-index: 40;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='7'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>"); }
+
+  .stage { position: relative; height: 100%; display: grid; place-items: center; box-sizing: border-box;
+    padding-block: 12px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .deck { position: relative; width: min(440px, 100%); height: min(880px, 100%); border-radius: 6px; overflow: hidden;
+    background: var(--paper); box-shadow: 0 30px 70px rgba(46, 33, 24, 0.22); touch-action: pan-y; user-select: none; }
+  /* двойная рамка как на старинных карточках */
+  .deck::before { content: ""; position: absolute; inset: 8px; border: 1px solid var(--line); box-shadow: inset 0 0 0 4px var(--paper), inset 0 0 0 5px var(--line); pointer-events: none; z-index: 19; }
+  .bars { position: absolute; z-index: 20; left: 20px; right: 20px; top: 18px; display: flex; gap: 4px; }
+  .bars span { flex: 1; height: 2px; background: rgba(107, 11, 12, 0.18); overflow: hidden; }
+  .bars span b { display: block; height: 100%; width: 0; background: var(--rose); }
+  .bars span.done b { width: 100%; }
+  .bars span.cur b { transition: none; }
+  .who { position: absolute; z-index: 20; left: 20px; right: 20px; top: 30px; display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; }
+  .who i { width: 28px; height: 28px; border-radius: 50%; background: var(--rose) center / 74% no-repeat url("img/logo_c.svg"); flex: none; }
+  .who small { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.65; margin-left: auto; font-variant-numeric: tabular-nums; }
+  .dk .who, .deck.dkon .who { color: var(--cream); }
+  .deck.dkon .bars span { background: var(--cline); } .deck.dkon .bars span b { background: var(--cream); }
+  .deck.dkon::before { border-color: var(--cline); box-shadow: none; }
+
+  .slide { position: absolute; inset: 0; padding: 80px 26px 30px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box;
+    isolation: isolate; opacity: 0; visibility: hidden; transform: translateX(14px); transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s; }
+  .slide.on { opacity: 1; visibility: visible; transform: none; }
+  .slide.dk { background: var(--rose); color: var(--cream); }
+  .slide.ol { background: var(--olive-d); color: var(--cream); }
+  .photo { position: absolute; inset: 0; z-index: -1; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(247, 240, 225, 0.2) 0%, rgba(247, 240, 225, 0.1) 35%, rgba(247, 240, 225, 0.94) 70%, var(--paper) 100%); }
+  .dk .photo::after { background: linear-gradient(180deg, rgba(107, 11, 12, 0.5) 0%, rgba(107, 11, 12, 0.25) 35%, rgba(107, 11, 12, 0.94) 72%, var(--rose) 100%); }
+  .ol .photo::after { background: linear-gradient(180deg, rgba(76, 74, 36, 0.5) 0%, rgba(76, 74, 36, 0.2) 35%, rgba(76, 74, 36, 0.95) 72%, var(--olive-d) 100%); }
+  .eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terra); display: flex; align-items: center; gap: 8px; }
+  .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .dk .eyebrow, .ol .eyebrow { color: var(--sage); }
+  h1, h2 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; line-height: 0.98; text-wrap: balance; color: var(--rose); }
+  .dk h1, .dk h2, .ol h1, .ol h2 { color: var(--cream); }
+  h1 { font-size: 46px; } h2 { font-size: 36px; }
+  h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--terra); }
+  .dk h1 em, .dk h2 em, .ol h1 em, .ol h2 em { color: var(--sage); }
+  .sub { margin: 0; font-size: 15.5px; line-height: 1.45; color: var(--esp-dim); }
+  .dk .sub, .ol .sub { color: var(--cream-dim); }
+  .push { margin-top: auto; }
+  .hint { font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--esp-dim); display: flex; align-items: center; gap: 8px; }
+  .hint::after { content: "→"; font-size: 18px; animation: nudge 1.6s ease-in-out infinite; }
+  @keyframes nudge { 50% { transform: translateX(6px); } }
+  .ui { position: relative; z-index: 12; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+
+  /* обложка */
+  .logo { width: 62%; max-width: 250px; align-self: flex-start; }
+  .polas { position: relative; flex: 1 1 0; min-height: 90px; max-height: 300px; }
+  .pola { position: absolute; height: 88%; aspect-ratio: 3 / 4; max-width: 50%; overflow: hidden; background: var(--paper); padding: 7px 7px 26px; box-sizing: border-box; box-shadow: 0 14px 34px rgba(46, 33, 24, 0.25); }
+  .pola img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pola small { position: absolute; left: 0; right: 0; bottom: 5px; text-align: center; font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--esp); }
+
+  /* 2 · две половины идеи */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .two div { border: 1px solid var(--cline); padding: 14px 12px; display: grid; gap: 6px; align-content: start; background: rgba(107, 11, 12, 0.55); }
+  .two b { font-family: var(--serif); font-size: 25px; font-weight: 600; line-height: 1; }
+  .two b i { color: var(--sage); }
+  .two span { font-size: 13.5px; line-height: 1.4; color: var(--cream-dim); }
+
+  /* 3 · слоган */
+  .seg { display: inline-flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; }
+  .seg button { all: unset; cursor: pointer; padding: 7px 13px; font-size: 13px; font-weight: 600; border: 1px solid var(--line); color: var(--esp-dim); }
+  .seg button[aria-pressed="true"] { background: var(--rose); border-color: var(--rose); color: var(--cream); }
+  .slogan { position: relative; border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: 4px; margin: 5px; padding: 34px 22px; text-align: center; display: grid; gap: 14px; place-items: center; min-height: 190px; background: var(--cream); }
+  .slogan p { margin: 0; font-family: var(--serif); font-size: 34px; font-weight: 600; line-height: 1.02; color: var(--rose); text-wrap: balance; }
+  .slogan p em { font-style: italic; font-weight: 500; color: var(--terra); }
+  .slogan small { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--esp-dim); }
+  .slogan .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
+
+  /* 4 · для кого */
+  .tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .tabs.t4 { grid-template-columns: repeat(4, 1fr); }
+  .tab { all: unset; cursor: pointer; text-align: center; padding: 10px 0; font-size: 13px; font-weight: 600; border: 1px solid var(--line); color: var(--esp-dim); }
+  .tab[aria-selected="true"] { background: var(--rose); color: var(--cream); border-color: var(--rose); }
+  .wk { background: var(--cream); border: 1px solid var(--line); padding: 18px; display: none; gap: 10px; }
+  .wk.on { display: grid; }
+  .wk h3 { margin: 0; font-family: var(--serif); font-size: 28px; font-weight: 600; line-height: 1; color: var(--rose); }
+  .wk h3 em { font-style: italic; font-weight: 500; color: var(--terra); }
+  .wk p { margin: 0; font-size: 14.5px; line-height: 1.45; }
+  .wk .say { font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.2; color: var(--olive-d); border-left: 2px solid var(--terra); padding-left: 10px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { font-size: 12.5px; padding: 5px 10px; border: 1px solid var(--line); }
+  .main { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--terra); }
+
+  /* 5 · тренды: лента */
+  .rail { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+  .rail::-webkit-scrollbar { display: none; }
+  .fcard { all: unset; box-sizing: border-box; cursor: pointer; flex: 0 0 84%; scroll-snap-align: start; overflow: hidden; position: relative; aspect-ratio: 4 / 5; border: 6px solid var(--cream); box-shadow: 0 0 0 1px var(--line); }
+  .fcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .fcard .ov { position: absolute; inset: 0; padding: 14px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; color: var(--cream);
+    background: linear-gradient(180deg, rgba(46, 33, 24, 0) 30%, rgba(46, 33, 24, 0.9) 100%); }
+  .fcard b { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1; }
+  .fcard span { font-size: 13.5px; line-height: 1.35; color: var(--cream-dim); }
+  .fcard .you { display: none; color: var(--cream); font-weight: 600; }
+  .fcard .you::before { content: "Для тебя: "; color: var(--sage); }
+  .fcard[aria-pressed="true"] .ov { background: rgba(107, 11, 12, 0.88); }
+  .fcard[aria-pressed="true"] .you { display: block; }
+  .fcard[aria-pressed="true"] .gen { display: none; }
+  .railnav { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .dots { display: flex; gap: 6px; } .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line); transition: background 0.2s, width 0.2s; }
+  .dots i.on { width: 20px; border-radius: 4px; background: var(--terra); }
+  .arrows { display: flex; gap: 6px; }
+  .arrows button { all: unset; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); font-size: 16px; }
+
+  /* 6 · палитра и мудборд */
+  .sw { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .sw div { aspect-ratio: 1.15; padding: 8px; display: flex; flex-direction: column; justify-content: flex-end; box-shadow: inset 0 0 0 1px var(--line); }
+  .sw b { font-size: 12.5px; font-weight: 600; } .sw span { font-size: 10.5px; opacity: 0.8; font-variant-numeric: tabular-nums; }
+  .mood { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; flex: 1 1 0; min-height: 60px; max-height: 150px; }
+  .mood img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* 7 · пост было/стало */
+  .post { position: relative; width: min(100%, 320px); aspect-ratio: 4 / 5; align-self: center; overflow: hidden; box-shadow: 0 16px 40px rgba(46, 33, 24, 0.22); }
+  .post > div { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 26px; gap: 12px; transition: opacity 0.35s; }
+  .post .was { background: #d4543a; color: #fbefcb; font-family: Georgia, serif; }
+  .post .was small { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; }
+  .post .was b { font-size: 26px; font-weight: 400; text-transform: uppercase; line-height: 1.15; }
+  .post .was span { font-size: 12px; opacity: 0.85; }
+  .post .now { background: var(--cream); color: var(--esp); }
+  .post .now::before { content: ""; position: absolute; inset: 12px; border: 1px solid var(--rose); outline: 1px solid var(--rose); outline-offset: -6px; }
+  .post .now small { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); font-weight: 600; }
+  .post .now b { font-family: var(--serif); font-size: 38px; font-weight: 600; line-height: 0.95; color: var(--rose); }
+  .post .now b em { font-style: italic; font-weight: 500; color: var(--terra); }
+  .post .now span { font-size: 12.5px; color: var(--esp-dim); max-width: 80%; }
+  .post .now img { width: 64px; margin-top: 6px; }
+  .post .now .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
+  .post[data-m="was"] .now, .post[data-m="now"] .was { opacity: 0; pointer-events: none; }
+
+  /* 8 · лента */
+  .grid9 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; overflow: hidden; width: min(100%, 330px); align-self: center; }
+  .grid9 div { aspect-ratio: 4 / 5; background-size: cover; background-position: center; display: grid; place-items: center; position: relative; }
+  .grid9 { font-size: 15px; } body.wide .grid9 { font-size: 11.5px; }
+  .grid9 div span { line-height: 1.15; text-align: center; padding: 6px; }
+
+  /* 9 · рубрики */
+  .acc { display: grid; gap: 6px; }
+  .acc button { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; padding: 11px 14px; background: var(--cream); border: 1px solid var(--line);
+    display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: center; }
+  .acc .t { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 1.05; color: var(--rose); }
+  .acc .n { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); background: var(--olive); padding: 4px 8px; }
+  .acc .n.k { background: var(--terra); }
+  .acc .why { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.4; color: var(--esp-dim); max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .acc button[aria-expanded="true"] .why { max-height: 90px; margin-top: 4px; }
+
+  /* 10 · карточки учителей */
+  .langs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .langs button { all: unset; cursor: pointer; padding: 6px 11px; font-size: 12.5px; font-weight: 600; border: 1px solid var(--line); }
+  .langs button[aria-pressed="true"] { background: var(--rose); color: var(--cream); border-color: var(--rose); }
+  .tcards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tc { background: var(--cream); border: 1px solid var(--line); padding: 10px; display: grid; gap: 7px; align-content: start; }
+  .tc .ph { aspect-ratio: 1; border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: -5px; display: grid; place-items: center; text-align: center;
+    background: radial-gradient(circle at 50% 38%, rgba(107, 11, 12, 0.12) 0 22%, transparent 23%), radial-gradient(ellipse at 50% 100%, rgba(107, 11, 12, 0.12) 0 38%, transparent 39%), var(--paper); }
+  .tc .ph span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--esp-dim); align-self: end; padding-bottom: 8px; }
+  .tc .k { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); }
+  .tc b { font-family: var(--serif); font-size: 21px; font-weight: 600; line-height: 1; color: var(--rose); }
+  .tc p { margin: 0; font-size: 12px; line-height: 1.35; color: var(--esp-dim); }
+  .tc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: 12px; }
+  .tc li { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 3px; }
+  .tc li i { font-style: normal; color: var(--esp-dim); }
+  .from { font-size: 12.5px; font-weight: 600; color: var(--olive-d); }
+
+  /* 11 · Telegram и бот */
+  .chat { background: var(--cream); border: 1px solid var(--line); display: grid; gap: 8px; padding: 12px; color: var(--esp); }
+  .chat .hd { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .chat .hd i { width: 26px; height: 26px; border-radius: 50%; background: var(--rose) center / 74% no-repeat url("img/logo_c.svg"); flex: none; }
+  .chat .hd small { font-weight: 500; color: var(--esp-dim); margin-left: auto; font-size: 11px; }
+  .topics { display: flex; gap: 5px; flex-wrap: wrap; }
+  .topics button { all: unset; cursor: pointer; font-size: 11.5px; font-weight: 600; padding: 4px 9px; border: 1px solid var(--line); }
+  .topics button[aria-pressed="true"] { background: var(--olive); border-color: var(--olive); color: var(--cream); }
+  .msg { max-width: 84%; font-size: 13px; line-height: 1.35; padding: 8px 11px; background: #fff; border: 1px solid var(--line); }
+  .msg small { display: block; font-size: 10.5px; font-weight: 700; color: var(--terra); margin-bottom: 2px; }
+  .msg.me { justify-self: end; background: #e9e4c9; }
+  .msg.bot small { color: var(--olive); }
+  .steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; counter-reset: s; }
+  .steps li { counter-increment: s; display: flex; gap: 10px; align-items: baseline; font-size: 14px; }
+  .steps li::before { content: counter(s); font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--terra); width: 14px; }
+
+  /* 13 · план */
+  .goals { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .goals div { padding: 9px 11px; border: 1px solid var(--line); }
+  .goals b { display: block; font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1; color: var(--rose); } .goals span { font-size: 12px; color: var(--esp-dim); }
+
+  .sign { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); }
+  .credit { font-size: 11px; color: var(--cream-dim); opacity: 0.8; }
+
+  .nav { position: fixed; z-index: 30; bottom: max(14px, env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+  .nav button { all: unset; cursor: pointer; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--rose); color: var(--cream); font-size: 18px; }
+  @media (min-width: 700px) { .stage { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); } }
+  @media (max-width: 699px) {
+    .deck { height: 100%; }
+    .nav { bottom: max(18px, env(safe-area-inset-bottom, 0px)); gap: 14px; }
+    .nav button { width: 40px; height: 40px; font-size: 17px; box-shadow: 0 6px 18px rgba(46, 33, 24, 0.35); }
+    .slide { padding-bottom: 74px; }
+  }
+
+  /* демо-рилс */
+  .player { position: relative; flex: 1 1 0; min-height: 0; display: flex; justify-content: center; }
+  .player video { height: 100%; max-height: 100%; aspect-ratio: 9 / 16; max-width: 100%; object-fit: cover; background: var(--esp); outline: 1px solid var(--rose); outline-offset: 5px; }
+  .player button { all: unset; cursor: pointer; position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 8px 15px;
+    background: rgba(107, 11, 12, 0.88); color: var(--cream); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .player button:focus-visible { outline: 2px solid var(--terra); }
+  body.wide .vis .player { flex: none; height: min(560px, 66vh); }
+
+  /* ПК: текст слева, визуал справа */
+  .txt, .vis { display: contents; }
+  body.wide .stage { padding-block: 14px; }
+  body.wide .nav { position: absolute; z-index: 25; top: 22px; right: 26px; bottom: auto; left: auto; transform: none; }
+  body.wide .nav button { width: 34px; height: 34px; font-size: 15px; background: rgba(107, 11, 12, 0.12); color: var(--rose); }
+  body.wide .deck.dkon .nav button { background: rgba(241, 230, 208, 0.16); color: var(--cream); }
+  body.wide .who small { margin-right: 96px; }
+  body.wide .deck { width: min(1200px, 100%); height: min(740px, 100%); }
+  body.wide .slide { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(70px, 12vh, 96px) clamp(30px, 4.5vw, 64px) clamp(20px, 4vh, 44px); }
+  body.wide .txt { display: flex; flex-direction: column; gap: clamp(8px, 2vh, 18px); min-width: 0; }
+  body.wide .vis { display: flex; flex-direction: column; gap: clamp(8px, 1.6vh, 14px); min-width: 0; min-height: 0; max-height: 100%; justify-content: center; }
+  body.wide .push:empty { display: none; } body.wide .push { margin-top: 0; }
+  body.wide h1 { font-size: clamp(34px, 8.5vh, 68px); } body.wide h2 { font-size: clamp(28px, 6.6vh, 52px); } body.wide .sub { font-size: clamp(14px, 2.4vh, 17px); }
+  body.wide .photo::after { background: linear-gradient(90deg, var(--paper) 0%, rgba(247, 240, 225, 0.9) 42%, rgba(247, 240, 225, 0.2) 100%); }
+  body.wide .dk .photo::after { background: linear-gradient(90deg, var(--rose) 0%, rgba(107, 11, 12, 0.88) 42%, rgba(107, 11, 12, 0.3) 100%); }
+  body.wide .ol .photo::after { background: linear-gradient(90deg, var(--olive-d) 0%, rgba(76, 74, 36, 0.9) 42%, rgba(76, 74, 36, 0.3) 100%); }
+  body.wide .vis .polas { flex: none; height: min(470px, 58vh); max-height: none; }
+  body.wide .vis .logo { align-self: center; width: auto; height: min(150px, 20vh); }
+  body.wide .vis .polas { height: min(340px, 46vh); }
+  body.wide .fcard { flex: 0 0 calc(50% - 5px); max-height: 50vh; }
+  body.wide .vis .post { width: min(340px, 50vh); }
+  body.wide .vis .grid9 { width: min(300px, 40vh); flex: none; }
+  body.wide .vis .mood { flex: none; height: min(150px, 18vh); }
+  body.wide .vis .sw div { aspect-ratio: 2; }
+  body.wide .tc .ph { aspect-ratio: 2.4; }
+  body.wide .tc { gap: 4px; padding: 8px; }
+  body.wide .tc p { display: none; }
+  body.wide .vis .slogan { min-height: 260px; } body.wide .slogan p { font-size: clamp(30px, 6vh, 44px); }
+  @media (prefers-reduced-motion: reduce) { .slide, .hint::after { transition: none; animation: none; } }
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%}</style>
+</head>
+<body>
+
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="stage">
+  <div class="deck" id="deck" aria-roledescription="сторис" aria-label="Идеи для New Roots">
+    <div class="bars" id="bars"></div>
+    <div class="who"><i aria-hidden="true"></i><span>newroots.school × Your Agency</span><small id="count">1 / 13</small></div>
+
+    <!-- 1 · обложка -->
+    <section class="slide" data-i="0">
+      <img class="logo" src="img/logo.svg" alt="New Roots">
+      <div class="polas">
+        <div class="pola" style="left: 3%; top: 4%; transform: rotate(-5deg)"><img src="img/book.jpg" alt=""><small>новые слова</small></div>
+        <div class="pola" style="right: 3%; top: 12%; transform: rotate(4deg)"><img src="img/cover.jpg" alt=""><small>новый город</small></div>
+      </div>
+      <div class="push"></div>
+      <h1>Смотри, что я придумал для <em>New Roots</em></h1>
+      <p class="sub">Идея, стиль, рубрики, карточки учителей и план запуска с нуля. Тут всё коротко, листай.</p>
+      <div class="hint">Свайп или стрелка</div>
+    </section>
+
+    <!-- 2 · идея -->
+    <section class="slide dk" data-i="1">
+      <div class="photo"><img src="img/roots.jpg" alt=""></div>
+      <div class="eyebrow">Главная мысль</div>
+      <h2>Пустить новые корни <em>и не потерять</em> свои</h2>
+      <div class="push"></div>
+      <div class="two">
+        <div><b>Новые <i>корни</i></b><span>Язык страны, где ты теперь живёшь: врач, документы, школа, экзамены.</span></div>
+        <div><b>Свои <i>корни</i></b><span>Русский и украинский для детей, чтобы дома говорили на родном.</span></div>
+      </div>
+      <p class="sub">Это уже есть в названии. Осталось красиво рассказать, и это закрывает сразу взрослых и детей.</p>
+    </section>
+
+    <!-- 3 · слоган -->
+    <section class="slide" data-i="2">
+      <div class="eyebrow">Одна фраза о школе</div>
+      <h2>Выбери, как <em>звучит</em> лучше</h2>
+      <div class="seg ui" id="sloganSeg"></div>
+      <div class="slogan ui"><small id="sloganK">твой вариант</small><p id="slogan"></p><span class="dot"></span></div>
+      <p class="sub push">Восемь вариантов. Мне больше всего нравится второй: коротко и сразу про обе аудитории. Но решать тебе.</p>
+    </section>
+
+    <!-- 4 · для кого -->
+    <section class="slide" data-i="3">
+      <div class="eyebrow">Для кого школа</div>
+      <h2>Три аудитории, <em>дети</em> главные</h2>
+      <div class="tabs ui" role="tablist" data-g="aud">
+        <button class="tab" role="tab" aria-selected="true" data-w="0">Дети</button><button class="tab" role="tab" aria-selected="false" data-w="1">Взрослые</button><button class="tab" role="tab" aria-selected="false" data-w="2">Цель</button>
+      </div>
+      <div class="wk on ui" data-g="aud"><span class="main">главный упор, как ты и хотела</span><h3>Дети и <em>школьники</em></h3><p>Семья переехала, ребёнок пошёл в местную школу. Ему нужен язык для уроков, а дома постепенно уходит родной.</p><p class="say">«Местный язык для школы и родной для дома. С учителем, который сам через это прошёл».</p><div class="tags"><span>язык для школы</span><span>русский</span><span>украинский</span><span>отчёт родителям</span></div></div>
+      <div class="wk ui" data-g="aud"><h3>Взрослые <em>после переезда</em></h3><p>Позвонить врачу, разобраться с документами и транспортом, не теряться в магазине и банке.</p><p class="say">«Первые уровни с учителем, который говорит по-русски и знает, как тут всё устроено».</p><div class="tags"><span>фразы на каждый день</span><span>документы</span><span>русскоговорящий учитель</span></div></div>
+      <div class="wk ui" data-g="aud"><h3>Есть <em>цель</em></h3><p>Экзамен на ПМЖ или гражданство, поступление в вуз. Например, твой учитель немецкого сам учился в медицинском.</p><p class="say">«Готовим к экзамену люди, которые сами его сдали».</p><div class="tags"><span>ПМЖ и гражданство</span><span>поступление</span><span>носитель на сильных уровнях</span></div></div>
+    </section>
+
+    <!-- 5 · что сейчас заходит -->
+    <section class="slide" data-i="4">
+      <div class="eyebrow">Пролистай и нажми на карточку</div>
+      <h2>Что реально <em>залетает</em> у русскоязычных</h2>
+      <div class="rail ui" id="rail">
+        <button class="fcard" aria-pressed="false"><img src="img/pen.jpg" alt=""><span class="ov"><b>Учитель и список слов</b><span class="gen">@kover_czech: учитель показывает на список «наверное — asi…». ×24 к обычным просмотрам.</span><span class="you">серия «5 слов, без которых не обойтись в Чехии»</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/write.jpg" alt=""><span class="ov"><b>Первый звонок врачу</b><span class="gen">«Главный страх любого иммигранта» ×53 и «Вы впервые записываетесь к врачу» ×47. Два разных аккаунта, одна боль.</span><span class="you">твоя тема про врача, только в рилсе</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/kids.jpg" alt=""><span class="ov"><b>Дети за границей</b><span class="gen">Мама про сына и 1 сентября за границей ×201. Билингвальная дочь ×23. Родители смотрят такое запоем.</span><span class="you">рубрика «Два языка дома»</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/move.jpg" alt=""><span class="ov"><b>Как меняешься за годы</b><span class="gen">«1 день в Германии… 5 лет» ×12 и «друг, который интегрировался за 4 года» ×10.</span><span class="you">рилс «Первый год после переезда»</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/exam.jpg" alt=""><span class="ov"><b>Запретное и обязательное</b><span class="gen">«Запретные жесты в Германии» у учителя немецкого ×40. Такое сохраняют и пересылают.</span><span class="you">«Что нельзя говорить в Чехии» на каждом языке</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/laptop.jpg" alt=""><span class="ov"><b>Экзамен-квиз</b><span class="gen">Школа немецкого: «Проверка, насколько ты готов к жизни в Германии» ×25, 1,4 млн просмотров.</span><span class="you">«Сдашь ли ты экзамен на ПМЖ?»</span></span></button>
+      </div>
+      <div class="railnav ui"><div class="dots" id="dots"></div><div class="arrows"><button id="rPrev" aria-label="Предыдущая карточка">←</button><button id="rNext" aria-label="Следующая карточка">→</button></div></div>
+      <p class="sub push">Нашёл через vidIQ 19 рилсов русскоязычных авторов за последние месяцы. ×N значит, во сколько раз ролик обогнал обычные просмотры своего аккаунта.</p>
+    </section>
+
+    <!-- 6 · палитра -->
+    <section class="slide" data-i="5">
+      <div class="eyebrow">Новый стиль</div>
+      <h2>Собрал с твоей <em>доски</em></h2>
+      <div class="sw">
+        <div style="background: var(--rose); color: var(--cream)"><b>Rosewood</b><span>#6B0B0C · логотип</span></div>
+        <div style="background: var(--olive); color: var(--cream)"><b>Олива</b><span>#6F6B34 · чистая</span></div>
+        <div style="background: var(--cream)"><b>Крем</b><span>#F1E6D0 · фон</span></div>
+        <div style="background: var(--terra); color: var(--cream)"><b>Терракота</b><span>#B4502A · точкой</span></div>
+        <div style="background: var(--esp); color: var(--cream)"><b>Эспрессо</b><span>#2E2118 · текст</span></div>
+        <div style="background: var(--sage)"><b>Шалфей</b><span>#B8B48C · детали</span></div>
+      </div>
+      <div class="mood"><img src="img/paper.jpg" alt=""><img src="img/olive.jpg" alt=""><img src="img/linen.jpg" alt=""><img src="img/card.jpg" alt=""></div>
+      <p class="sub push">Бордовый из логотипа, олива без грязи, тёплый крем. Оранжевый остаётся только терракотовой точкой. Шрифт к логотипу: Cormorant, спокойный и дорогой.</p>
+    </section>
+
+    <!-- 7 · пост было / стало -->
+    <section class="slide" data-i="6">
+      <div class="eyebrow">Тот же пост</div>
+      <h2>Тема твоя, <em>подача</em> новая</h2>
+      <div class="seg ui" id="postSeg"><button aria-pressed="false" data-m="was">Сейчас</button><button aria-pressed="true" data-m="now">Как будет</button></div>
+      <div class="post ui" id="post" data-m="now">
+        <div class="was"><small>Немецкий язык</small><b>Как записаться к врачу по телефону</b><span>6 готовых фраз, чтобы уверенно записаться на приём</span></div>
+        <div class="now"><small>Немецкий · фраза для ситуации</small><span class="dot"></span><b>Как записаться <em>к врачу</em></b><span>6 фраз для звонка. Сохрани, пригодится</span><img src="img/logo.svg" alt=""></div>
+      </div>
+      <p class="sub push">Тема у тебя отличная. Меняем только подачу: рамка, воздух, один акцент. Выглядит дороже и сразу узнаётся в ленте.</p>
+    </section>
+
+    <!-- 8 · лента -->
+    <section class="slide" data-i="7">
+      <div class="eyebrow">Лента</div>
+      <h2>Так будет выглядеть <em>профиль</em></h2>
+      <div class="seg ui" id="gridSeg"><button aria-pressed="false" data-m="now">Сейчас</button><button aria-pressed="true" data-m="new">Как будет</button></div>
+      <div class="grid9 ui" id="grid9"></div>
+      <p class="sub push">Фото, текст в рамке, фото. Рубрики чередуются, цвета повторяются, и через 9 постов это уже бренд.</p>
+    </section>
+
+    <!-- 9 · рубрики -->
+    <section class="slide" data-i="8">
+      <div class="eyebrow">Рубрики</div>
+      <h2>Шесть рубрик, <em>нажми</em> на каждую</h2>
+      <div class="acc ui">
+        <button aria-expanded="true"><span class="t">Знакомьтесь, учитель</span><span class="n k">главная</span><span class="why">Кто он, сколько живёт в стране, как сам учил язык. 30 секунд, и человек уже хочет к нему.</span></button>
+        <button aria-expanded="false"><span class="t">Фраза для ситуации</span><span class="n">сохраняют</span><span class="why">Карусель: врач, банк, школа, транспорт. У тебя такое уже есть, просто в новом стиле.</span></button>
+        <button aria-expanded="false"><span class="t">Два языка дома</span><span class="n k">детям</span><span class="why">Для родителей: как сохранить русский или украинский. Игры, книги, мультики, маленькие победы.</span></button>
+        <button aria-expanded="false"><span class="t">Бюрократия без паники</span><span class="n">взрослым</span><span class="why">Пошагово: документы, запись, письма. Каждый шаг с нужной фразой на языке.</span></button>
+        <button aria-expanded="false"><span class="t">Задание с экзамена</span><span class="n">цель</span><span class="why">Одно задание с ПМЖ или гражданства, ответ в комментариях. Вовлекает и показывает уровень учителей.</span></button>
+        <button aria-expanded="false"><span class="t">Истории переезда</span><span class="n">доверие</span><span class="why">Ученики и учителя про первый год. Это и есть твоё «вы не одни, нас тут много».</span></button>
+      </div>
+    </section>
+
+    <!-- 10 · демо-рилс -->
+    <section class="slide" data-i="9">
+      <div class="eyebrow">Демо-рилс · 25 секунд</div>
+      <h2>Первый год <em>после переезда</em></h2>
+      <div class="player ui">
+        <video id="demo" src="video/demo.mp4" poster="video/demo_poster.jpg" muted loop playsinline preload="metadata"></video>
+        <button id="snd" aria-label="Включить звук">🔇 нажми для звука</button>
+      </div>
+      <p class="sub">Рубрика «Истории переезда» в рилсе. Хук про звонок врачу (такие у русскоязычных залетают в десятки раз), дальше год по месяцам, в конце твой слоган.</p>
+      <p class="sub">Собрал из стоков, чтобы показать идею. Снимем то же с твоими учителями.</p>
+    </section>
+
+    <!-- 10 · карточки учителей -->
+    <section class="slide" data-i="10">
+      <div class="eyebrow">Карточки учителей</div>
+      <h2>Как ты хотела, <em>только красиво</em></h2>
+      <div class="langs ui" id="langs"></div>
+      <div class="tcards ui" id="tcards"></div>
+      <p class="sub push">Это шаблон. Подставим реальные фото, имена и цены, и будешь кидать карточки клиенту прямо в Telegram.</p>
+    </section>
+
+    <!-- 11 · как проходит учёба -->
+    <section class="slide" data-i="11">
+      <div class="eyebrow">Как проходит учёба</div>
+      <h2>Всё бесплатно и <em>понятно</em></h2>
+      <ol class="steps"><li>Выбрал учителя по карточке</li><li>Взял абонемент на 4, 8 или 16 уроков</li><li>Урок в Zoom или Google Meet</li><li>Своя группа в Telegram: ты, учитель, ученик</li></ol>
+      <div class="chat ui">
+        <div class="hd"><i aria-hidden="true"></i>New Roots · Маша и учитель<small>3 участника</small></div>
+        <div class="topics" id="topics"><button aria-pressed="true" data-t="0">Уроки</button><button aria-pressed="false" data-t="1">Домашка</button><button aria-pressed="false" data-t="2">Материалы</button></div>
+        <div id="tmsg"></div>
+      </div>
+      <p class="sub push">Родителям видно всё: когда урок, что задали, как прошло. Для детской аудитории это важно.</p>
+    </section>
+
+    <!-- 12 · ИИ-помощник -->
+    <section class="slide ol" data-i="12">
+      <div class="eyebrow">Фишка на вырост</div>
+      <div class="photo"><img src="img/laptop.jpg" alt=""></div>
+      <div class="push"></div>
+      <h2>ИИ-помощник для домашки? <em>Идея огонь</em></h2>
+      <p class="sub">Бот в Telegram, который сразу проверяет домашку. Это круто, но на вырост: сначала запускаем школу, потом вернёмся к нему.</p>
+    </section>
+
+    <!-- 13 · план запуска -->
+    <section class="slide" data-i="13">
+      <div class="eyebrow">Запуск с нуля</div>
+      <h2>Первый месяц <em>по неделям</em></h2>
+      <div class="tabs t4 ui" role="tablist" data-g="plan">
+        <button class="tab" role="tab" aria-selected="true" data-w="0">Нед. 1</button><button class="tab" role="tab" aria-selected="false" data-w="1">Нед. 2</button><button class="tab" role="tab" aria-selected="false" data-w="2">Нед. 3</button><button class="tab" role="tab" aria-selected="false" data-w="3">Нед. 4</button>
+      </div>
+      <div class="wk on ui" data-g="plan"><h3>Упаковка <em>профиля</em></h3><div class="tags"><span>новое био</span><span>аватар с логотипом</span><span>хайлайты: Учителя, Цены, Детям, Как учимся</span><span>первые 9 постов</span></div></div>
+      <div class="wk ui" data-g="plan"><h3>Знакомство <em>со школой</em></h3><div class="tags"><span>рилс «Зачем New Roots»</span><span>2 учителя знакомятся</span><span>2 фразы для ситуации</span></div></div>
+      <div class="wk ui" data-g="plan"><h3>Неделя <em>для детей</em></h3><div class="tags"><span>рилс «Два языка дома»</span><span>советы родителям</span><span>опрос в сторис</span></div></div>
+      <div class="wk ui" data-g="plan"><h3>Выход <em>к людям</em></h3><div class="tags"><span>русскоязычные чаты в разных странах</span><span>коллаб с мамой-блогером в эмиграции</span><span>пробное занятие</span></div></div>
+      <div class="goals push"><div><b>12</b><span>постов за месяц</span></div><div><b>4</b><span>рилса</span></div><div><b>5+</b><span>учителей в карточках</span></div><div><b>1</b><span>путь: пост → Директ → карточки → абонемент</span></div></div>
+      <div class="credit" style="color: var(--esp-dim)">Your Agency · фото для примера: Pexels, учителя на карточках условные</div>
+    </section>
+
+  </div>
+</div>
+<div class="nav"><button id="bPrev" aria-label="Назад">←</button><button id="bNext" aria-label="Дальше">→</button></div>
+
+<script>
+  const slides = [...document.querySelectorAll(".slide")], N = slides.length;
+  const bars = document.getElementById("bars"), count = document.getElementById("count"), deck = document.getElementById("deck");
+  bars.innerHTML = slides.map(() => "<span><b></b></span>").join("");
+  let cur = 0;
+  function show(i) {
+    cur = Math.max(0, Math.min(N - 1, i));
+    slides.forEach((s, k) => s.classList.toggle("on", k === cur));
+    deck.classList.toggle("dkon", slides[cur].classList.contains("dk") || slides[cur].classList.contains("ol"));
+    setBar();
+    count.textContent = (cur + 1) + " / " + N;
+    if (typeof syncDemo === "function") syncDemo();
+  }
+  // демо-рилс играет без звука, пока открыт его слайд; звук по нажатию
+  const demo = document.getElementById("demo"), snd = document.getElementById("snd"), demoSlide = demo.closest(".slide");
+  function syncDemo() { if (slides[cur] === demoSlide) { demo.play().catch(() => {}); } else { demo.pause(); } }
+  snd.addEventListener("click", (e) => { e.stopPropagation(); demo.muted = !demo.muted; if (!demo.muted) { demo.currentTime = 0; demo.play().catch(() => {}); }
+    snd.textContent = demo.muted ? "🔇 нажми для звука" : "🔊 звук включён"; });
+  demo.addEventListener("click", (e) => { e.stopPropagation(); demo.paused ? demo.play() : demo.pause(); });
+  const next = () => show(cur + 1), prev = () => show(cur - 1);
+  document.getElementById("bNext").onclick = next; document.getElementById("bPrev").onclick = prev;
+  addEventListener("keydown", (e) => { if (e.key === "ArrowRight") next(); if (e.key === "ArrowLeft") prev(); });
+  // свайп только горизонтальный и не с ленты
+  let sx = null, sy = null;
+  deck.addEventListener("pointerdown", (e) => { if (!e.target.closest(".rail")) { sx = e.clientX; sy = e.clientY; } });
+  deck.addEventListener("pointerup", (e) => { if (sx === null) return; const dx = e.clientX - sx, dy = e.clientY - sy; sx = null; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) (dx < 0 ? next : prev)(); });
+  const press = (group, b) => group.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+
+  // 3 · слоган
+  const SL = [["твой вариант", "Помогаем пустить <em>новые корни</em>"], ["про обе аудитории", "Новые корни. <em>Свои</em> корни."], ["тёплый", "Язык, на котором живёшь. <em>Язык, на котором любишь.</em>"],
+    ["про дом", "Чтобы здесь <em>было как дома</em>"], ["про поддержку", "Ты здесь <em>не один</em>. Нас много."], ["про переезд", "Новый дом начинается <em>с языка</em>"],
+    ["для родителей", "Местный язык для школы. <em>Родной</em> для дома."], ["коротко", "Говори там, <em>где живёшь</em>"]];
+  document.getElementById("sloganSeg").innerHTML = SL.map((_, k) => `<button aria-pressed="${k === 0}" data-s="${k}">${k === 0 ? "Твой" : k + 1}</button>`).join("");
+  const slBtns = [...document.querySelectorAll("#sloganSeg button")];
+  const setSlogan = (k) => { document.getElementById("slogan").innerHTML = SL[k][1]; document.getElementById("sloganK").textContent = SL[k][0]; press(slBtns, slBtns[k]); };
+  slBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); setSlogan(+b.dataset.s); }));
+  setSlogan(0);
+
+  // вкладки (аудитории и план)
+  document.querySelectorAll(".tabs").forEach((tl) => {
+    const g = tl.dataset.g, tabs = [...tl.children], wks = [...document.querySelectorAll(`.wk[data-g="${g}"]`)];
+    tabs.forEach((t) => t.addEventListener("click", (e) => { e.stopPropagation(); const w = +t.dataset.w;
+      tabs.forEach((x, k) => x.setAttribute("aria-selected", String(k === w))); wks.forEach((x, k) => x.classList.toggle("on", k === w)); }));
+  });
+
+  // 5 · лента трендов
+  document.querySelectorAll(".fcard").forEach((c) => c.addEventListener("click", (e) => { e.stopPropagation(); c.setAttribute("aria-pressed", String(c.getAttribute("aria-pressed") !== "true")); }));
+  const rail = document.getElementById("rail"), cards = [...rail.children], dots = document.getElementById("dots");
+  dots.innerHTML = cards.map(() => "<i></i>").join("");
+  const step = () => cards[1].offsetLeft - cards[0].offsetLeft;
+  const sync = () => { const k = Math.round(rail.scrollLeft / step()); [...dots.children].forEach((d, i) => d.classList.toggle("on", i === k)); };
+  rail.addEventListener("scroll", sync, { passive: true }); sync();
+  document.getElementById("rNext").onclick = (e) => { e.stopPropagation(); rail.scrollBy({ left: step() }); };
+  document.getElementById("rPrev").onclick = (e) => { e.stopPropagation(); rail.scrollBy({ left: -step() }); };
+
+  // 7 · пост было/стало
+  const postBtns = [...document.querySelectorAll("#postSeg button")];
+  postBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); document.getElementById("post").dataset.m = b.dataset.m; press(postBtns, b); }));
+
+  // 8 · сетка профиля
+  const g9 = document.getElementById("grid9");
+  const NOW = [["#fbefcb", "", "#d4543a"], ["#d4543a", "Как записаться к врачу по телефону", "#fbefcb"], ["#fbefcb", "Как разобраться в метро", "#d4543a"], ["#d4543a", "", ""], ["#fbefcb", "", ""], ["#d4543a", "", ""], ["#fbefcb", "", ""], ["#d4543a", "", ""], ["#fbefcb", "", ""]];
+  const NEW = [["img/pen.jpg", "", ""], ["#f1e6d0", "Как записаться к врачу", "#6b0b0c"], ["img/kids.jpg", "", ""], ["#6b0b0c", "Два языка дома", "#f1e6d0"], ["img/olive.jpg", "", ""], ["#6f6b34", "Знакомьтесь, учитель", "#f1e6d0"], ["#f1e6d0", "Задание с экзамена", "#6b0b0c"], ["img/tram.jpg", "", ""], ["#b4502a", "Истории переезда", "#f1e6d0"]];
+  for (let k = 0; k < 9; k++) g9.appendChild(Object.assign(document.createElement("div"), { innerHTML: "<span></span>" }));
+  const gridBtns = [...document.querySelectorAll("#gridSeg button")];
+  function grid(mode) {
+    [...g9.children].forEach((c, k) => {
+      const [bg, t, fg] = (mode === "now" ? NOW : NEW)[k], s = c.firstChild;
+      c.style.background = bg.startsWith("img/") ? `center / cover no-repeat url(${bg})` : bg;
+      c.style.boxShadow = mode === "new" && !bg.startsWith("img/") ? `inset 0 0 0 5px ${bg}, inset 0 0 0 6px ${fg}` : "none";
+      s.textContent = t; s.style.color = fg;
+      s.style.fontFamily = mode === "now" ? "Georgia, serif" : "var(--serif)"; s.style.fontSize = mode === "now" ? "0.65em" : "1em";
+      s.style.textTransform = mode === "now" ? "uppercase" : "none"; s.style.fontWeight = mode === "now" ? "400" : "600";
+    });
+    press(gridBtns, gridBtns[mode === "now" ? 0 : 1]);
+  }
+  gridBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); grid(b.dataset.m); }));
+  grid("new");
+
+  // 9 · рубрики
+  document.querySelectorAll(".acc button").forEach((b) => b.addEventListener("click", (e) => {
+    e.stopPropagation(); document.querySelectorAll(".acc button").forEach((x) => x.setAttribute("aria-expanded", String(x === b)));
+  }));
+
+  // 10 · карточки учителей (шаблон, учителя условные)
+  const L = [["Чешский", "в Чехии"], ["Немецкий", "в Германии"], ["Испанский", "в Испании"], ["Итальянский", "в Италии"], ["Португальский", "в Португалии"], ["Русский для детей", ""]];
+  const langs = document.getElementById("langs"), tcards = document.getElementById("tcards");
+  langs.innerHTML = L.map(([n], k) => `<button aria-pressed="${k === 0}" data-k="${k}">${n}</button>`).join("");
+  const pack = '<ul><li>4 урока<i>цена</i></li><li>8 уроков<i>цена</i></li><li>16 уроков<i>цена</i></li></ul>';
+  function teachers(k) {
+    const [n, where] = L[k];
+    const a = k === 5
+      ? ["Педагог", "Имя учителя", "Русский язык для детей 6+ в эмиграции. Игры, чтение, письмо."]
+      : ["Говорит по-русски", "Имя учителя", `Живёт ${where} N лет, сертификат. Начальные уровни.`];
+    const b = k === 5
+      ? ["Педагог", "Имя учителя", "Украинский для детей. Можно добавить, если решишь."]
+      : ["Носитель", "Имя учителя", "Для тех, кто хочет говорить свободно и готовится к экзамену."];
+    tcards.innerHTML = [a, b].map(([t, nm, p]) => `<div class="tc"><div class="ph"><span>фото учителя</span></div><span class="k">${n} · ${t}</span><b>${nm}</b><p>${p}</p>${pack}<span class="from">от 25 € за урок</span></div>`).join("");
+    press([...langs.children], langs.children[k]);
+  }
+  [...langs.children].forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); teachers(+b.dataset.k); }));
+  teachers(0);
+
+  // 11 · темы в группе Telegram
+  const TM = [[["New Roots", "Урок в четверг в 18:00. Ссылка на Zoom за 10 минут до начала.", ""], ["Маша", "Будем!", "me"]],
+    [["Учитель", "Домашка: упражнение 3 и голосовое на минуту, как прошёл твой день.", ""], ["Маша", "Готово, отправила голосовое", "me"]],
+    [["Учитель", "Слова к уроку и короткий текст про поход к врачу. PDF 👇", ""], ["Маша", "Спасибо!", "me"]]];
+  const topics = [...document.querySelectorAll("#topics button")], tmsg = document.getElementById("tmsg");
+  const setT = (k) => { tmsg.innerHTML = TM[k].map(([w, t, c]) => `<div class="msg ${c}" style="margin-top:6px${c ? ';margin-left:auto' : ''}"><small>${w}</small>${t}</div>`).join(""); press(topics, topics[k]); };
+  topics.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); setT(+b.dataset.t); }));
+  setT(0);
+
+  // интерактив не листает сторис
+  document.querySelectorAll(".ui").forEach((u) => u.addEventListener("pointerup", (e) => e.stopPropagation()));
+  // ПК: текст слева, визуал справа
+  const TXT = ".eyebrow, h1, h2, .sub, .hint, .sign, .credit";
+  const orig = slides.map((sl) => [...sl.children]);
+  const wideMQ = matchMedia("(min-width: 900px) and (min-aspect-ratio: 1/1)");
+  function layout() {
+    const wide = wideMQ.matches;
+    document.body.classList.toggle("wide", wide);
+    slides.forEach((sl, k) => {
+      if (wide && !sl.querySelector(":scope > .txt")) {
+        const t = document.createElement("div"), v = document.createElement("div"); t.className = "txt"; v.className = "vis";
+        orig[k].forEach((el) => { if (el.classList.contains("photo")) return; (el.matches(TXT) ? t : v).appendChild(el); });
+        sl.append(t, v);
+      } else if (!wide && sl.querySelector(":scope > .txt")) {
+        sl.querySelectorAll(":scope > .txt, :scope > .vis").forEach((w) => w.remove());
+        orig[k].forEach((el) => sl.appendChild(el));
+      }
+    });
+  }
+  const navEl = document.querySelector(".nav");
+  const placeNav = () => (wideMQ.matches ? deck.appendChild(navEl) : document.body.appendChild(navEl));
+  layout(); placeNav(); wideMQ.addEventListener("change", () => { layout(); placeNav(); });
+
+  // автопролист как в сторис: пауза при удержании пальца и 10 с после нажатия на интерактив
+  let holding = false, elapsed = 0, need = 6, lastT = performance.now(), uiUntil = 0;
+  function slideDur(sl) { if (sl.querySelector("video")) return 27; const words = (sl.innerText || "").split(/\s+/).filter(Boolean).length; return Math.min(14, Math.max(5, 2.5 + words * 0.22)); }
+  function setBar() {
+    [...bars.children].forEach((b, k) => { b.classList.toggle("done", k < cur); b.classList.remove("cur"); b.firstChild.style.width = ""; });
+    bars.children[cur].classList.add("cur");
+    elapsed = 0; need = slideDur(slides[cur]);
+    bars.children[cur].firstChild.style.width = cur === N - 1 ? "100%" : "0%";
+  }
+  setInterval(() => {
+    const now = performance.now(), dt = (now - lastT) / 1000; lastT = now;
+    if (cur === N - 1 || deck.classList.contains("paused")) return;
+    elapsed += dt; bars.children[cur].firstChild.style.width = Math.min(100, elapsed / need * 100) + "%";
+    if (elapsed >= need) next();
+  }, 100);
+  const syncPause = () => deck.classList.toggle("paused", holding || Date.now() < uiUntil || document.hidden);
+  document.querySelectorAll(".ui").forEach((u) => u.addEventListener("pointerdown", () => { uiUntil = Date.now() + 10000; setTimeout(syncPause, 10050); }));
+  deck.addEventListener("pointerdown", () => { holding = true; syncPause(); });
+  addEventListener("pointerup", () => { holding = false; syncPause(); }, true);
+  addEventListener("pointercancel", () => { holding = false; syncPause(); }, true);
+  document.addEventListener("visibilitychange", syncPause);
+  const h = location.hash.match(/^#s(\d+)$/); show(h ? +h[1] - 1 : 0);
+</script>
+
+</body>
+</html>
