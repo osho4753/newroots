@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="New Roots × Your Agency">
-<meta property="og:description" content="Как мы видим New Roots: слоган, стиль, рубрики и демо-рилс">
+<meta property="og:description" content="Как мы видим New Roots: слоган, два стиля, рубрики и демо-рилс">
 <meta property="og:image" content="https://osho4753.github.io/newroots/img/cover.jpg">
 <title>New Roots: идеи для запуска</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap">
 <style>
   /* Layout: питч-сторис для New Roots, написан как другу. Тихий премиум: бумага, двойные рамки, бордовый из логотипа, чистая олива, терракота точкой. */
   :root {
@@ -112,6 +112,7 @@
   /* 5 · тренды: лента */
   .rail { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
   .rail::-webkit-scrollbar { display: none; }
+  .rail { touch-action: pan-x pan-y; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
   .fcard { all: unset; box-sizing: border-box; cursor: pointer; flex: 0 0 84%; scroll-snap-align: start; overflow: hidden; position: relative; aspect-ratio: 4 / 5; border: 6px solid var(--cream); box-shadow: 0 0 0 1px var(--line); }
   .fcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .fcard .ov { position: absolute; inset: 0; padding: 14px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; color: var(--cream);
@@ -228,6 +229,60 @@
   .player button:focus-visible { outline: 2px solid var(--terra); }
   body.wide .vis .player { flex: none; height: min(560px, 66vh); }
 
+  /* стиль 2: стикеры, палитры профиля, коммерческие шаблоны */
+  .deck { --s-bg: #f1e6d0; --s-main: #6b0b0c; --s-second: #6f6b34; --s-acc: #b4502a; --s-ink: #2e2118; --s-on: #f1e6d0; --s-hl: #e9c9a0; }
+  .deck[data-pal="b"] { --s-bg: #f3ecd5; --s-main: #4f5a24; --s-second: #2e3a1d; --s-acc: #e0a234; --s-ink: #232818; --s-on: #f3ecd5; --s-hl: #f0cf7c; }
+  .deck[data-pal="c"] { --s-bg: #f6ebdc; --s-main: #b4502a; --s-second: #1f4a59; --s-acc: #8db7c9; --s-ink: #1e2a30; --s-on: #f6ebdc; --s-hl: #bcd8e3; }
+  .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .duo figure { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; align-content: start; min-width: 0; }
+  .duo .post .now small { font-size: 8px; letter-spacing: 0.14em; } .duo .post .now::before { inset: 8px; }
+  .duo figcaption { font-size: 13px; line-height: 1.3; color: var(--esp-dim); } .duo figcaption b { display: block; color: var(--rose); font-size: 14px; }
+  .duo .post, body.wide .vis .duo .post { width: 100%; box-shadow: 0 10px 24px rgba(46, 33, 24, 0.18); }
+  body.wide .vis .duo { width: min(100%, 74vh); align-self: center; }
+  .duo .post .now { padding: 14px; gap: 6px; } .duo .post .now b { font-size: 24px; } .duo .post .now span { font-size: 10.5px; } .duo .post .now img { width: 40px; }
+  .stk6 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .stk6 figure { margin: 0; display: grid; gap: 4px; justify-items: center; text-align: center; padding: 10px 6px 8px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--line); }
+  .stk6 img { height: 70px; width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(46, 33, 24, 0.18)); }
+  .stk6 b { font-size: 12px; font-weight: 600; line-height: 1.2; }
+  .np { position: relative; aspect-ratio: 4 / 5; container-type: inline-size; overflow: hidden; background: var(--s-bg); color: var(--s-ink); font-family: var(--sans); }
+  .np::before { content: ""; position: absolute; inset: 3.5cqw; border: 0.4cqw solid var(--s-main); outline: 0.25cqw solid var(--s-main); outline-offset: -1.6cqw; z-index: 1; pointer-events: none; }
+  .np.dk { background: var(--s-main); color: var(--s-on); } .np.dk::before { border-color: var(--s-on); outline-color: var(--s-on); opacity: 0.7; }
+  .np .rub { position: absolute; left: 9cqw; top: 9cqw; z-index: 2; font-size: 4.2cqw; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--s-main); color: var(--s-on); padding: 1.4cqw 2.6cqw; }
+  .np.dk .rub { background: var(--s-on); color: var(--s-main); }
+  .np .tx { position: absolute; left: 9cqw; right: 9cqw; top: 22cqw; z-index: 2; display: grid; gap: 3cqw; justify-items: start; }
+  .np h3 { margin: 0; font-size: 11.6cqw; font-weight: 900; line-height: 0.98; letter-spacing: -0.03em; color: inherit; font-family: var(--sans); }
+  .np h3 mark { background: var(--s-acc); color: var(--s-bg); padding: 0 1.6cqw; display: inline-block; transform: rotate(-2deg); margin: 0.6cqw 0; }
+  .np.dk h3 mark { background: var(--s-hl); color: var(--s-main); }
+  .np h3 i { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.18em; letter-spacing: 0; color: var(--s-main); }
+  .np.dk h3 i { color: var(--s-hl); }
+  .np .sb { font-size: 5.2cqw; font-weight: 600; line-height: 1.2; }
+  .np .st { position: absolute; right: 4cqw; bottom: 8cqw; width: 44cqw; z-index: 3; transform: rotate(8deg); filter: drop-shadow(0 1.6cqw 1.4cqw rgba(0, 0, 0, 0.22)); }
+  .np .badge { position: absolute; left: 9cqw; bottom: 9cqw; z-index: 2; width: 12cqw; height: 12cqw; background: var(--s-main); display: grid; place-items: center; }
+  .np.dk .badge { background: var(--s-on); } .np .badge img { width: 80%; } .np.dk .badge img { filter: brightness(0); opacity: 0.85; }
+  .np .sw2 { position: absolute; left: 24cqw; bottom: 11cqw; z-index: 2; font-size: 4.4cqw; font-weight: 700; letter-spacing: 0.06em; }
+  .np.ph { background-size: cover; background-position: center; } .np.ph::before { border-color: #fff; outline-color: #fff; opacity: 0.8; } .np.ph .rub { top: auto; bottom: 9cqw; }
+  .trail .np { flex: 0 0 78%; scroll-snap-align: start; box-shadow: 0 0 0 1px var(--line); }
+  body.wide .trail .np { flex: 0 0 calc(50% - 5px); }
+  .igp { width: min(100%, 300px); align-self: center; flex: 1 1 0; min-height: 0; overflow-y: auto; scrollbar-width: none; background: #fff; color: #111; border: 7px solid #1c1714; border-radius: 26px; font-size: 10.5px; line-height: 1.35; font-family: var(--sans); }
+  .igp::-webkit-scrollbar { display: none; }
+  body.wide .vis .igp { flex: none; height: min(560px, 66vh); }
+  .igp.min { --s-bg: #f1e6d0; --s-main: #6b0b0c; --s-second: #6f6b34; --s-acc: #b4502a; --s-on: #f1e6d0; }
+  .igp.min .ava { background: var(--s-main); } .igp.min .hl img { width: 100%; height: 100%; object-fit: cover; }
+  .igp .grid9, body.wide .vis .igp .grid9 { width: 100%; gap: 2px; font-size: 11px; }
+  .igp .top { display: flex; justify-content: space-between; padding: 9px 12px 4px; font-weight: 700; font-size: 13px; }
+  .igp .hd { display: grid; grid-template-columns: 62px 1fr; gap: 12px; align-items: center; padding: 4px 12px 8px; }
+  .igp .ava { width: 62px; height: 62px; border-radius: 50%; padding: 2px; box-sizing: border-box; background: conic-gradient(var(--s-acc), var(--s-main), var(--s-second), var(--s-acc)); }
+  .igp .ava div { width: 100%; height: 100%; border-radius: 50%; border: 2px solid #fff; box-sizing: border-box; background: var(--s-main); display: grid; place-items: center; } .igp .ava img { width: 70%; }
+  .igp .nums { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; } .igp .nums b { display: block; font-size: 13px; }
+  .igp .bio { padding: 0 12px 8px; display: grid; } .igp .bio b { font-weight: 700; } .igp .bio .c { color: #777; } .igp .bio u { color: #00376b; text-decoration: none; font-weight: 600; }
+  .igp .btn { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; padding: 0 12px 10px; }
+  .igp .btn span { background: #efefef; border-radius: 7px; text-align: center; padding: 5px 0; font-weight: 600; } .igp .btn span:first-child { background: var(--s-main); color: var(--s-on); }
+  .igp .hls { display: flex; gap: 9px; padding: 0 10px 10px; overflow: hidden; }
+  .igp .hl { flex: none; width: 46px; display: grid; gap: 3px; justify-items: center; font-size: 9px; }
+  .igp .hl i { width: 46px; height: 46px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px #ddd; box-sizing: border-box; background: var(--s-bg); display: grid; place-items: center; overflow: hidden; } .igp .hl img { width: 74%; }
+  .igp .tb { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #eee; text-align: center; padding: 6px 0; color: #999; font-size: 12px; } .igp .tb span:first-child { color: #111; }
+  .igp .g9 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
+
   /* ПК: текст слева, визуал справа */
   .txt, .vis { display: contents; }
   body.wide .stage { padding-block: 14px; }
@@ -333,9 +388,20 @@
       <p class="sub push">Мы разобрали 19 рилсов русскоязычных авторов за последние месяцы. ×N значит, во сколько раз ролик обогнал обычные просмотры своего аккаунта.</p>
     </section>
 
-    <!-- 6 · палитра -->
+    <!-- 6 · два стиля -->
     <section class="slide" data-i="5">
-      <div class="eyebrow">Новый стиль</div>
+      <div class="eyebrow">Стиль</div>
+      <h2>Предлагаем <em>два</em> направления</h2>
+      <div class="duo">
+        <figure><div class="post" data-m="now"><div class="now"><small>Фраза для ситуации</small><span class="dot"></span><b>Как записаться <em>к врачу</em></b><span>6 фраз для звонка</span><img src="img/logo.svg" alt=""></div></div><figcaption><b>1 · Минимализм</b>тихо и дорого: рамка, воздух, курсив</figcaption></figure>
+        <figure><div class="np"><span class="rub">Фраза для ситуации</span><div class="tx"><h3>6 фраз, чтобы <mark>позвонить</mark> <i>врачу</i></h3></div><img class="st" src="img/st-phone.webp" alt=""><span class="badge"><img src="img/logo_c.svg" alt=""></span><span class="sw2">листай →</span></div><figcaption><b>2 · Со стикерами</b>ярче, как у больших школ, свой стикерпак</figcaption></figure>
+      </div>
+      <p class="sub push">Дальше показываем оба. Можно и смешать: основа минималистичная, стикеры в отдельных рубриках.</p>
+    </section>
+
+    <!-- 6 · палитра -->
+    <section class="slide" data-i="6">
+      <div class="eyebrow">Стиль 1 · минимализм</div>
       <h2>Собрали с твоей <em>доски</em></h2>
       <div class="sw">
         <div style="background: var(--rose); color: var(--cream)"><b>Rosewood</b><span>#6B0B0C · логотип</span></div>
@@ -350,8 +416,8 @@
     </section>
 
     <!-- 7 · пост было / стало -->
-    <section class="slide" data-i="6">
-      <div class="eyebrow">Тот же пост</div>
+    <section class="slide" data-i="7">
+      <div class="eyebrow">Стиль 1 · тот же пост</div>
       <h2>Тема твоя, <em>подача</em> новая</h2>
       <div class="seg ui" id="postSeg"><button aria-pressed="false" data-m="was">Сейчас</button><button aria-pressed="true" data-m="now">Как будет</button></div>
       <div class="post ui" id="post" data-m="now">
@@ -362,16 +428,58 @@
     </section>
 
     <!-- 8 · лента -->
-    <section class="slide" data-i="7">
-      <div class="eyebrow">Лента</div>
+    <section class="slide" data-i="8">
+      <div class="eyebrow">Стиль 1 · лента</div>
       <h2>Так будет выглядеть <em>профиль</em></h2>
       <div class="seg ui" id="gridSeg"><button aria-pressed="false" data-m="now">Сейчас</button><button aria-pressed="true" data-m="new">Как будет</button></div>
-      <div class="grid9 ui" id="grid9"></div>
-      <p class="sub push">Фото, текст в рамке, фото. Рубрики чередуются, цвета повторяются, и через 9 постов это уже бренд.</p>
+      <div class="igp min ui" aria-label="Макет профиля Instagram">
+        <div class="top"><span>‹</span><span>newroots.school</span><span>···</span></div>
+        <div class="hd"><div class="ava"><div><img src="img/logo_c.svg" alt=""></div></div><div class="nums"><div><b>9</b>постов</div><div><b>—</b>подписчики</div><div><b>—</b>подписки</div></div></div>
+        <div class="bio"><b>New Roots · языковая школа</b><span class="c">Образование</span><span>Помогаем пустить новые корни</span><span>Чешский, немецкий, испанский, итальянский, португальский</span><span>Русский для детей за границей</span><span>Подобрать учителя ↓</span><u>newroots.school</u></div>
+        <div class="btn"><span>Подписаться</span><span>Сообщение</span></div>
+        <div class="hls"><div class="hl"><i><img src="img/pen.jpg" alt=""></i>Учителя</div><div class="hl"><i><img src="img/book.jpg" alt=""></i>Цены</div><div class="hl"><i><img src="img/flowers.jpg" alt=""></i>Детям</div><div class="hl"><i><img src="img/laptop.jpg" alt=""></i>Уроки</div><div class="hl"><i><img src="img/tram.jpg" alt=""></i>Отзывы</div></div>
+        <div class="tb"><span>▦</span><span>▶</span><span>☺</span></div>
+        <div class="grid9" id="grid9"></div>
+      </div>
+      <p class="sub push">Листай внутри телефона. Фото, текст в рамке, фото: рубрики чередуются, цвета повторяются, и через 9 постов это уже бренд.</p>
+    </section>
+
+    <!-- 10 · стиль 2: стикеры -->
+    <section class="slide" data-i="9">
+      <div class="eyebrow">Стиль 2 · со стикерами</div>
+      <h2>Свой <em>стикерпак</em> для школы</h2>
+      <div class="stk6"><figure><img src="img/st-roots.webp" alt="Росток с корнями"><b>Росток с корнями</b></figure><figure><img src="img/st-phone.webp" alt="Звонок"><b>Звонок</b></figure><figure><img src="img/st-bubbles.webp" alt="Диалог"><b>Диалог</b></figure><figure><img src="img/st-docs.webp" alt="Документы"><b>Документы</b></figure><figure><img src="img/st-tram.webp" alt="Трамвай"><b>Трамвай</b></figure><figure><img src="img/st-cat.webp" alt="Кот-талисман"><b>Кот-талисман</b></figure></div>
+      <p class="sub push">Рисуем стикеры под New Roots в цветах логотипа. Они живут на постах, в хайлайтах и рилсах, поэтому в ленте всегда есть что-то кроме текста. Людей не рисуем. Набор можно пополнять под новые рубрики.</p>
+    </section>
+
+    <!-- 11 · стиль 2: профиль -->
+    <section class="slide" data-i="10">
+      <div class="eyebrow">Стиль 2 · профиль</div>
+      <h2>Три палитры, <em>выбери</em> свою</h2>
+      <div class="seg ui" id="palSeg"><button aria-pressed="true" data-p="a">Rosewood</button><button aria-pressed="false" data-p="b">Олива и горчица</button><button aria-pressed="false" data-p="c">Терракота и небо</button></div>
+      <div class="igp ui" aria-label="Макет профиля Instagram">
+        <div class="top"><span>‹</span><span>newroots.school</span><span>···</span></div>
+        <div class="hd"><div class="ava"><div><img src="img/logo_c.svg" alt=""></div></div><div class="nums"><div><b>9</b>постов</div><div><b>—</b>подписчики</div><div><b>—</b>подписки</div></div></div>
+        <div class="bio"><b>New Roots · языковая школа</b><span class="c">Образование</span><span>Помогаем пустить новые корни 🌱</span><span>Чешский, немецкий, испанский, итальянский, португальский</span><span>Русский для детей за границей</span><span>👇 Подобрать учителя</span><u>newroots.school</u></div>
+        <div class="btn"><span>Подписаться</span><span>Сообщение</span></div>
+        <div class="hls"><div class="hl"><i><img src="img/st-bubbles.webp" alt=""></i>Учителя</div><div class="hl"><i><img src="img/st-docs.webp" alt=""></i>Цены</div><div class="hl"><i><img src="img/st-roots.webp" alt=""></i>Детям</div><div class="hl"><i><img src="img/st-phone.webp" alt=""></i>Уроки</div><div class="hl"><i><img src="img/st-cat.webp" alt=""></i>Отзывы</div></div>
+        <div class="tb"><span>▦</span><span>▶</span><span>☺</span></div>
+        <div class="g9" id="g9s"></div>
+      </div>
+      <p class="sub push">Листай внутри телефона. Шрифты и рамка наши во всех трёх вариантах, меняются только цвета.</p>
+    </section>
+
+    <!-- 12 · стиль 2: шаблоны -->
+    <section class="slide" data-i="11">
+      <div class="eyebrow">Стиль 2 · шаблоны</div>
+      <h2>Обложки, <em>которые цепляют</em></h2>
+      <div class="rail trail ui" id="trail"></div>
+      <div class="railnav ui"><div class="dots" id="tdots"></div><div class="arrows"><button id="tPrev" aria-label="Предыдущая обложка">←</button><button id="tNext" aria-label="Следующая обложка">→</button></div></div>
+      <p class="sub push">Короткий жирный заголовок, одно слово в плашке, стикер и «листай». Листай обложки пальцем или стрелками. Цвета берутся из палитры, которую ты выбрал на прошлом слайде.</p>
     </section>
 
     <!-- 9 · рубрики -->
-    <section class="slide" data-i="8">
+    <section class="slide" data-i="12">
       <div class="eyebrow">Рубрики</div>
       <h2>Шесть рубрик, <em>нажми</em> на каждую</h2>
       <div class="acc ui">
@@ -385,7 +493,7 @@
     </section>
 
     <!-- 10 · демо-рилс -->
-    <section class="slide" data-i="9">
+    <section class="slide" data-i="13">
       <div class="eyebrow">Демо-рилс · 25 секунд</div>
       <h2>Первый год <em>после переезда</em></h2>
       <div class="player ui">
@@ -397,7 +505,7 @@
     </section>
 
     <!-- 10 · карточки учителей -->
-    <section class="slide" data-i="10">
+    <section class="slide" data-i="14">
       <div class="eyebrow">Карточки учителей</div>
       <h2>Как ты хотела, <em>только красиво</em></h2>
       <div class="langs ui" id="langs"></div>
@@ -406,9 +514,9 @@
     </section>
 
     <!-- 11 · как проходит учёба -->
-    <section class="slide" data-i="11">
+    <section class="slide" data-i="15">
       <div class="eyebrow">Как проходит учёба</div>
-      <h2>Всё бесплатно и <em>понятно</em></h2>
+      <h2>Всё просто и <em>понятно</em></h2>
       <ol class="steps"><li>Выбрал учителя по карточке</li><li>Взял абонемент на 4, 8 или 16 уроков</li><li>Урок в Zoom или Google Meet</li><li>Своя группа в Telegram: ты, учитель, ученик</li></ol>
       <div class="chat ui">
         <div class="hd"><i aria-hidden="true"></i>New Roots · Маша и учитель<small>3 участника</small></div>
@@ -418,17 +526,8 @@
       <p class="sub push">Родителям видно всё: когда урок, что задали, как прошло. Для детской аудитории это важно.</p>
     </section>
 
-    <!-- 12 · ИИ-помощник -->
-    <section class="slide ol" data-i="12">
-      <div class="eyebrow">Фишка на вырост</div>
-      <div class="photo"><img src="img/laptop.jpg" alt=""></div>
-      <div class="push"></div>
-      <h2>ИИ-помощник для домашки? <em>Идея огонь</em></h2>
-      <p class="sub">Бот в Telegram, который сразу проверяет домашку. Это круто, но на вырост: сначала запускаем школу, потом вернёмся к нему.</p>
-    </section>
-
     <!-- 13 · план запуска -->
-    <section class="slide" data-i="13">
+    <section class="slide" data-i="16">
       <div class="eyebrow">Запуск с нуля</div>
       <h2>Первый месяц <em>по неделям</em></h2>
       <div class="tabs t4 ui" role="tablist" data-g="plan">
@@ -470,7 +569,7 @@
   addEventListener("keydown", (e) => { if (e.key === "ArrowRight") next(); if (e.key === "ArrowLeft") prev(); });
   // свайп только горизонтальный и не с ленты
   let sx = null, sy = null;
-  deck.addEventListener("pointerdown", (e) => { if (!e.target.closest(".rail")) { sx = e.clientX; sy = e.clientY; } });
+  deck.addEventListener("pointerdown", (e) => { if (!e.target.closest(".rail, .igp")) { sx = e.clientX; sy = e.clientY; } });
   deck.addEventListener("pointerup", (e) => { if (sx === null) return; const dx = e.clientX - sx, dy = e.clientY - sy; sx = null; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) (dx < 0 ? next : prev)(); });
   const press = (group, b) => group.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
 
@@ -500,6 +599,30 @@
   rail.addEventListener("scroll", sync, { passive: true }); sync();
   document.getElementById("rNext").onclick = (e) => { e.stopPropagation(); rail.scrollBy({ left: step() }); };
   document.getElementById("rPrev").onclick = (e) => { e.stopPropagation(); rail.scrollBy({ left: -step() }); };
+
+  // стиль 2: посты из шаблона, палитра на всю колоду
+  const NP = {
+    call: ["Фраза для ситуации", "6 фраз, чтобы <mark>позвонить</mark> <i>врачу</i>", "phone", 0, ""],
+    ahoj: ["Живой язык", "Забудь про <mark>«Dobrý den»</mark> с друзьями", "cat", 1, "Говори просто «Ahoj» 👋"],
+    docs: ["Без паники", "5 слов из <mark>письма</mark> <i>ведомства</i>", "docs", 0, ""],
+    kids: ["Два языка дома", "3 игры, чтобы <mark>не забыть</mark> <i>русский</i>", "roots", 1, ""],
+    tram: ["В городе", "Знаешь, где <mark>выходить?</mark>", "tram", 0, "5 фраз для трамвая 🚋"],
+    lesson: ["Как учимся", "Как проходит <mark>первый</mark> <i>урок</i>", "bubbles", 1, ""],
+  };
+  const np = (k) => { const [r, h, st, dk, sb] = NP[k];
+    return `<div class="np${dk ? " dk" : ""}"><span class="rub">${r}</span><div class="tx"><h3>${h}</h3>${sb ? `<span class="sb">${sb}</span>` : ""}</div><img class="st" src="img/st-${st}.webp" alt=""><span class="badge"><img src="img/logo_c.svg" alt=""></span><span class="sw2">листай →</span></div>`; };
+  const nph = (src, r) => `<div class="np ph" style="background-image:url(img/${src})"><span class="rub">${r}</span></div>`;
+  document.getElementById("g9s").innerHTML = [np("call"), nph("pen.jpg", "Учитель"), np("ahoj"), np("kids"), np("tram"), nph("tram.jpg", "История"), nph("flowers.jpg", "Школа"), np("lesson"), np("docs")].join("");
+  document.getElementById("trail").innerHTML = Object.keys(NP).map(np).join("");
+  { const tr = document.getElementById("trail"), tc = [...tr.children], td = document.getElementById("tdots");
+    td.innerHTML = tc.map(() => "<i></i>").join("");
+    const st = () => tc[1].offsetLeft - tc[0].offsetLeft;
+    const sy = () => { const k = Math.round(tr.scrollLeft / st()); [...td.children].forEach((d, i) => d.classList.toggle("on", i === k)); };
+    tr.addEventListener("scroll", sy, { passive: true }); sy();
+    document.getElementById("tNext").onclick = (e) => { e.stopPropagation(); tr.scrollBy({ left: st() }); };
+    document.getElementById("tPrev").onclick = (e) => { e.stopPropagation(); tr.scrollBy({ left: -st() }); }; }
+  const palBtns = [...document.querySelectorAll("#palSeg button")];
+  palBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); deck.dataset.pal = b.dataset.p; press(palBtns, b); }));
 
   // 7 · пост было/стало
   const postBtns = [...document.querySelectorAll("#postSeg button")];
