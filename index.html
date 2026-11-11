@@ -705,27 +705,10 @@
   const placeNav = () => (wideMQ.matches ? deck.appendChild(navEl) : document.body.appendChild(navEl));
   layout(); placeNav(); wideMQ.addEventListener("change", () => { layout(); placeNav(); });
 
-  // автопролист как в сторис: пауза при удержании пальца и 10 с после нажатия на интерактив
-  let holding = false, elapsed = 0, need = 6, lastT = performance.now(), uiUntil = 0;
-  function slideDur(sl) { if (sl.querySelector("video")) return 27; const words = (sl.innerText || "").split(/\s+/).filter(Boolean).length; return Math.min(14, Math.max(5, 2.5 + words * 0.22)); }
+  // листание только вручную: полоски показывают, на каком слайде ты сейчас
   function setBar() {
-    [...bars.children].forEach((b, k) => { b.classList.toggle("done", k < cur); b.classList.remove("cur"); b.firstChild.style.width = ""; });
-    bars.children[cur].classList.add("cur");
-    elapsed = 0; need = slideDur(slides[cur]);
-    bars.children[cur].firstChild.style.width = cur === N - 1 ? "100%" : "0%";
+    [...bars.children].forEach((b, k) => { b.classList.toggle("done", k <= cur); b.classList.remove("cur"); b.firstChild.style.width = ""; });
   }
-  setInterval(() => {
-    const now = performance.now(), dt = (now - lastT) / 1000; lastT = now;
-    if (cur === N - 1 || deck.classList.contains("paused")) return;
-    elapsed += dt; bars.children[cur].firstChild.style.width = Math.min(100, elapsed / need * 100) + "%";
-    if (elapsed >= need) next();
-  }, 100);
-  const syncPause = () => deck.classList.toggle("paused", holding || Date.now() < uiUntil || document.hidden);
-  document.querySelectorAll(".ui").forEach((u) => u.addEventListener("pointerdown", () => { uiUntil = Date.now() + 10000; setTimeout(syncPause, 10050); }));
-  deck.addEventListener("pointerdown", () => { holding = true; syncPause(); });
-  addEventListener("pointerup", () => { holding = false; syncPause(); }, true);
-  addEventListener("pointercancel", () => { holding = false; syncPause(); }, true);
-  document.addEventListener("visibilitychange", syncPause);
   const h = location.hash.match(/^#s(\d+)$/); show(h ? +h[1] - 1 : 0);
 </script>
 
