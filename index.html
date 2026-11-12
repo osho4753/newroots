@@ -298,7 +298,11 @@
   .igp .btn span { background: #efefef; border-radius: 7px; text-align: center; padding: 5px 0; font-weight: 600; } .igp .btn span:first-child { background: var(--s-main); color: var(--s-on); }
   .igp .hls { display: flex; gap: 9px; padding: 0 10px 10px; overflow: hidden; }
   .igp .hl { flex: none; width: 46px; display: grid; gap: 3px; justify-items: center; font-size: 9px; }
-  .igp .hl i { width: 46px; height: 46px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px #ddd; box-sizing: border-box; background: var(--s-bg); display: grid; place-items: center; overflow: hidden; } .igp .hl img { width: 74%; }
+  .igp .hl i { position: relative; width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--s-bg); box-shadow: 0 0 0 1.5px var(--hlc, var(--s-main)), 0 0 0 3.5px var(--s-bg), 0 0 0 4.2px var(--hlc, var(--s-main)); box-sizing: border-box; background: var(--s-bg); display: grid; place-items: center; overflow: hidden; }
+  .igp .hl i::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--hlc, var(--s-main)); mix-blend-mode: color; opacity: 0.42; }
+  .igp .hl img { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(0.85); }
+  .igp .hls { padding-top: 4px; } .igp .hl { width: 50px; }
+  .deck[data-pal="m"] .igp .hl:nth-child(3n+2) { --hlc: #4f5a24; } .deck[data-pal="m"] .igp .hl:nth-child(3n) { --hlc: #b4502a; }
   .igp .tb { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #eee; text-align: center; padding: 6px 0; color: #999; font-size: 12px; } .igp .tb span:first-child { color: #111; }
   .igp .g9 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
 
@@ -459,7 +463,7 @@
         <div class="tb"><span>▦</span><span>▶</span><span>☺</span></div>
         <div class="g9" id="g9s"></div>
       </div>
-      <p class="sub push">Профиль и цвета из первого стиля, карусели со стикерами из второго. Rosewood основная, терракота и небо вторым вариантом, или микс: обложки по очереди в трёх прежних палитрах. Листай внутри телефона.</p>
+      <p class="sub push">Профиль и цвета из первого стиля, карусели со стикерами из второго. Rosewood основная, терракота и небо вторым вариантом, или микс: обложки по очереди в трёх прежних палитрах. Хайлайты те же фото, но в двойной рамке и тоне палитры. Листай внутри телефона.</p>
     </section>
 
     <!-- 12 · стиль 2: шаблоны -->
