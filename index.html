@@ -380,7 +380,7 @@
       <h2>Слоган <em>выбран</em></h2>
       <div class="seg ui" id="sloganSeg"></div>
       <div class="slogan ui"><small id="sloganK">основной</small><p id="slogan"></p><span class="dot"></span></div>
-      <p class="sub push">Главный слоган идёт в био, на обложку и в конец рилсов. Ещё три фразы вспомогательные: живут в подписях, сторис и коротких обложках.</p>
+      <p class="sub push">Главный слоган идёт в био, на обложку и в конец рилсов. Ещё две фразы вспомогательные: живут в сторис, подписях и коротких обложках.</p>
     </section>
 
     <!-- 4 · для кого -->
@@ -496,7 +496,7 @@
       <h2>Подача ок, <em>кадры</em> доснимем</h2>
       <div class="shots">
         <figure><img src="img/demo-18.jpg" alt=""><figcaption><b>✓ Текст на плашке</b> шрифт и подача фраз</figcaption></figure>
-        <figure><img src="img/demo-slogan.jpg" alt=""><figcaption><b>✓ Слоган и языки</b> оливковый слайд с плашками</figcaption></figure>
+        <figure><img src="img/demo-slogan.jpg" alt=""><figcaption><b>✓ Слоган и языки</b> бордовый слайд Rosewood с плашками</figcaption></figure>
         <figure><img src="img/demo-end.jpg" alt=""><figcaption><b>✓ Концовка</b> логотип, кнопка, звук</figcaption></figure>
       </div>
       <div class="doshoot"><b>Доснять для полного фарша</b>
@@ -572,7 +572,7 @@
   const press = (group, b) => group.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
 
   // 3 · слоган
-  const SL = [["основной", "Помогаем пустить <em>новые корни</em> и не потерять свои"], ["в подписях и рилсах", "Новые корни. <em>Свои</em> корни."],
+  const SL = [["основной", "Помогаем пустить <em>новые корни</em> и не потерять свои"],
     ["в сторис и тёплых постах", "Чтобы здесь <em>было как дома</em>"], ["коротко, для обложек", "Помогаем пустить <em>новые корни</em>"]];
   document.getElementById("sloganSeg").innerHTML = SL.map((_, k) => `<button aria-pressed="${k === 0}" data-s="${k}">${k === 0 ? "Главный" : k + 1}</button>`).join("");
   const slBtns = [...document.querySelectorAll("#sloganSeg button")];
