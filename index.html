@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="New Roots × Your Agency">
-<meta property="og:description" content="Как мы видим New Roots: слоган, два стиля, рубрики и демо-рилс">
+<meta property="og:description" content="Как мы видим New Roots: слоган, единый стиль, рубрики и план запуска">
 <meta property="og:image" content="https://osho4753.github.io/newroots/img/cover.jpg">
 <title>New Roots: идеи для запуска</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -131,6 +131,22 @@
   .arrows button { all: unset; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); font-size: 16px; }
 
   /* 6 · палитра и мудборд */
+  .sw.sw-mini { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; } .sw.sw-mini div { aspect-ratio: 0.85; padding: 5px; } .sw.sw-mini b { font-size: 9.5px; } .sw.sw-mini span { font-size: 8px; }
+  .stat { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat .col { display: grid; gap: 6px; align-content: start; padding: 12px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--line); }
+  .stat .col > b { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); }
+  .stat .todo > b { color: var(--terra); }
+  .stat span { position: relative; padding-left: 18px; font-size: 12.5px; line-height: 1.3; }
+  .stat .ok span::before { content: "✓"; position: absolute; left: 0; color: var(--olive); font-weight: 700; }
+  .stat .todo span::before { content: "○"; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
+  .stat i { font-style: normal; font-weight: 700; color: var(--terra); margin-left: 6px; white-space: nowrap; }
+  .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .shots figure { margin: 0; display: grid; gap: 4px; } .shots img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; box-shadow: 0 0 0 1px var(--line); }
+  .shots figcaption { font-size: 11px; line-height: 1.25; color: var(--esp-dim); } .shots figcaption b { color: var(--olive); }
+  .doshoot { display: grid; gap: 5px; padding: 12px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--line); }
+  .doshoot > b { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); }
+  .doshoot span { position: relative; padding-left: 18px; font-size: 12.5px; line-height: 1.3; } .doshoot span::before { content: "○"; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
+  body.wide .vis .shots { width: min(100%, 44vh); align-self: center; } body.wide .vis .doshoot { gap: 3px; padding: 9px 12px; } body.wide .vis .doshoot span { font-size: 12px; }
   .sw { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .sw div { aspect-ratio: 1.15; padding: 8px; display: flex; flex-direction: column; justify-content: flex-end; box-shadow: inset 0 0 0 1px var(--line); }
   .sw b { font-size: 12.5px; font-weight: 600; } .sw span { font-size: 10.5px; opacity: 0.8; font-variant-numeric: tabular-nums; }
@@ -179,6 +195,7 @@
   .tc .ph { aspect-ratio: 1; border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: -5px; display: grid; place-items: center; text-align: center;
     background: radial-gradient(circle at 50% 38%, rgba(107, 11, 12, 0.12) 0 22%, transparent 23%), radial-gradient(ellipse at 50% 100%, rgba(107, 11, 12, 0.12) 0 38%, transparent 39%), var(--paper); }
   .tc .ph span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--esp-dim); align-self: end; padding-bottom: 8px; }
+  .tc .spec { justify-self: start; font-size: 10.5px; font-weight: 600; color: var(--rose); border: 1px solid var(--rose); padding: 2px 7px; }
   .tc .k { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); }
   .tc b { font-family: var(--serif); font-size: 21px; font-weight: 600; line-height: 1; color: var(--rose); }
   .tc p { margin: 0; font-size: 12px; line-height: 1.35; color: var(--esp-dim); }
@@ -233,6 +250,8 @@
   .deck { --s-bg: #f1e6d0; --s-main: #6b0b0c; --s-second: #6f6b34; --s-acc: #b4502a; --s-ink: #2e2118; --s-on: #f1e6d0; --s-hl: #e9c9a0; }
   .deck[data-pal="b"] { --s-bg: #f3ecd5; --s-main: #4f5a24; --s-second: #2e3a1d; --s-acc: #e0a234; --s-ink: #232818; --s-on: #f3ecd5; --s-hl: #f0cf7c; }
   .deck[data-pal="c"] { --s-bg: #f6ebdc; --s-main: #b4502a; --s-second: #1f4a59; --s-acc: #8db7c9; --s-ink: #1e2a30; --s-on: #f6ebdc; --s-hl: #bcd8e3; }
+  .deck[data-pal="m"] .np:nth-child(3n+2) { --s-bg: #f3ecd5; --s-main: #4f5a24; --s-second: #2e3a1d; --s-acc: #e0a234; --s-ink: #232818; --s-on: #f3ecd5; --s-hl: #f0cf7c; }
+  .deck[data-pal="m"] .np:nth-child(3n) { --s-bg: #f6ebdc; --s-main: #b4502a; --s-second: #1f4a59; --s-acc: #8db7c9; --s-ink: #1e2a30; --s-on: #f6ebdc; --s-hl: #bcd8e3; }
   .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .duo figure { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; align-content: start; min-width: 0; }
   .duo .post .now small { font-size: 8px; letter-spacing: 0.14em; } .duo .post .now::before { inset: 8px; }
@@ -242,7 +261,7 @@
   .duo .post .now { padding: 14px; gap: 6px; } .duo .post .now b { font-size: 24px; } .duo .post .now span { font-size: 10.5px; } .duo .post .now img { width: 40px; }
   .stk6 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .stk6 figure { margin: 0; display: grid; gap: 4px; justify-items: center; text-align: center; padding: 10px 6px 8px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--line); }
-  .stk6 img { height: 70px; width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(46, 33, 24, 0.18)); }
+  .stk6 img { height: 78px; width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(46, 33, 24, 0.18)); }
   .stk6 b { font-size: 12px; font-weight: 600; line-height: 1.2; }
   .np { position: relative; aspect-ratio: 4 / 5; container-type: inline-size; overflow: hidden; background: var(--s-bg); color: var(--s-ink); font-family: var(--sans); }
   .np::before { content: ""; position: absolute; inset: 3.5cqw; border: 0.4cqw solid var(--s-main); outline: 0.25cqw solid var(--s-main); outline-offset: -1.6cqw; z-index: 1; pointer-events: none; }
@@ -257,10 +276,10 @@
   .np.dk h3 i { color: var(--s-hl); }
   .np .sb { font-size: 5.2cqw; font-weight: 600; line-height: 1.2; }
   .np .st { position: absolute; right: 4cqw; bottom: 8cqw; width: 44cqw; z-index: 3; transform: rotate(8deg); filter: drop-shadow(0 1.6cqw 1.4cqw rgba(0, 0, 0, 0.22)); }
-  .np .badge { position: absolute; left: 9cqw; bottom: 9cqw; z-index: 2; width: 12cqw; height: 12cqw; background: var(--s-main); display: grid; place-items: center; }
-  .np.dk .badge { background: var(--s-on); } .np .badge img { width: 80%; } .np.dk .badge img { filter: brightness(0); opacity: 0.85; }
-  .np .sw2 { position: absolute; left: 24cqw; bottom: 11cqw; z-index: 2; font-size: 4.4cqw; font-weight: 700; letter-spacing: 0.06em; }
+  .np .lg { position: absolute; left: 8.5cqw; bottom: 8cqw; z-index: 2; width: 21cqw; }
+  .np .sw2 { position: absolute; left: 33cqw; bottom: 12cqw; z-index: 2; font-size: 4.4cqw; font-weight: 700; letter-spacing: 0.06em; }
   .np.ph { background-size: cover; background-position: center; } .np.ph::before { border-color: #fff; outline-color: #fff; opacity: 0.8; } .np.ph .rub { top: auto; bottom: 9cqw; }
+  .np .r18 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 7cqw; color: var(--s-acc); }
   .trail .np { flex: 0 0 78%; scroll-snap-align: start; box-shadow: 0 0 0 1px var(--line); }
   body.wide .trail .np { flex: 0 0 calc(50% - 5px); }
   .igp { width: min(100%, 300px); align-self: center; flex: 1 1 0; min-height: 0; overflow-y: auto; scrollbar-width: none; background: #fff; color: #111; border: 7px solid #1c1714; border-radius: 26px; font-size: 10.5px; line-height: 1.35; font-family: var(--sans); }
@@ -345,19 +364,19 @@
       <h2>Пустить новые корни <em>и не потерять</em> свои</h2>
       <div class="push"></div>
       <div class="two">
-        <div><b>Новые <i>корни</i></b><span>Язык страны, где ты теперь живёшь: врач, документы, школа, экзамены.</span></div>
-        <div><b>Свои <i>корни</i></b><span>Русский и украинский для детей, чтобы дома говорили на родном.</span></div>
+        <div><b>Новые <i>корни</i></b><span>Язык страны, где ты теперь живёшь: работа, документы, школа, экзамены, друзья.</span></div>
+        <div><b>Свои <i>корни</i></b><span>Родной язык рядом: русский для детей и взрослых, чтобы дома говорили на своём.</span></div>
       </div>
-      <p class="sub">Это уже есть в названии. Осталось красиво рассказать, и это закрывает сразу взрослых и детей.</p>
+      <p class="sub">Это уже есть в названии. Работает для любого языка и любой страны, сразу про взрослых и детей.</p>
     </section>
 
     <!-- 3 · слоган -->
     <section class="slide" data-i="2">
       <div class="eyebrow">Одна фраза о школе</div>
-      <h2>Выбери, как <em>звучит</em> лучше</h2>
+      <h2>Слоган <em>выбран</em></h2>
       <div class="seg ui" id="sloganSeg"></div>
-      <div class="slogan ui"><small id="sloganK">твой вариант</small><p id="slogan"></p><span class="dot"></span></div>
-      <p class="sub push">Мы предлагаем восемь вариантов. Нам ближе второй: коротко и сразу про обе аудитории. Выберем вместе.</p>
+      <div class="slogan ui"><small id="sloganK">основной</small><p id="slogan"></p><span class="dot"></span></div>
+      <p class="sub push">Главный слоган идёт в био, на обложку и в конец рилсов. Ещё три фразы вспомогательные: живут в подписях, сторис и коротких обложках.</p>
     </section>
 
     <!-- 4 · для кого -->
@@ -367,9 +386,9 @@
       <div class="tabs ui" role="tablist" data-g="aud">
         <button class="tab" role="tab" aria-selected="true" data-w="0">Дети</button><button class="tab" role="tab" aria-selected="false" data-w="1">Взрослые</button><button class="tab" role="tab" aria-selected="false" data-w="2">Цель</button>
       </div>
-      <div class="wk on ui" data-g="aud"><span class="main">главный упор, как ты и хотела</span><h3>Дети и <em>школьники</em></h3><p>Семья переехала, ребёнок пошёл в местную школу. Ему нужен язык для уроков, а дома постепенно уходит родной.</p><p class="say">«Местный язык для школы и родной для дома. С учителем, который сам через это прошёл».</p><div class="tags"><span>язык для школы</span><span>русский</span><span>украинский</span><span>отчёт родителям</span></div></div>
-      <div class="wk ui" data-g="aud"><h3>Взрослые <em>после переезда</em></h3><p>Позвонить врачу, разобраться с документами и транспортом, не теряться в магазине и банке.</p><p class="say">«Первые уровни с учителем, который говорит по-русски и знает, как тут всё устроено».</p><div class="tags"><span>фразы на каждый день</span><span>документы</span><span>русскоговорящий учитель</span></div></div>
-      <div class="wk ui" data-g="aud"><h3>Есть <em>цель</em></h3><p>Экзамен на ПМЖ или гражданство, поступление в вуз. Например, твой учитель немецкого сам учился в медицинском.</p><p class="say">«Готовим к экзамену люди, которые сами его сдали».</p><div class="tags"><span>ПМЖ и гражданство</span><span>поступление</span><span>носитель на сильных уровнях</span></div></div>
+      <div class="wk on ui" data-g="aud"><span class="main">главный упор · решают и платят родители</span><h3>Дети и <em>школьники</em></h3><p>Семья переехала, ребёнок пошёл в местную школу. Нужен язык для уроков и помощь со школьными предметами, а дома постепенно уходит родной. Поэтому говорим с мамами и папами.</p><p class="say">«Язык и школьные предметы для ребёнка, родной для дома. И вам видно каждый урок».</p><div class="tags"><span>язык для школы</span><span>школьные предметы</span><span>родной дома</span><span>отчёт родителям</span></div></div>
+      <div class="wk ui" data-g="aud"><h3>Взрослые: <em>с нуля и продвинутые</em></h3><p>Одни только начинают, другие уже говорят и хотят звучать как местные: культура, колорит, фразочки, шутки.</p><p class="say">«Не учебник, а живой язык: как говорят на самом деле».</p><div class="tags"><span>с нуля</span><span>продвинутый уровень</span><span>культура и колорит</span><span>фразочки и шутки</span></div></div>
+      <div class="wk ui" data-g="aud"><h3>Есть <em>цель</em></h3><p>Много языков и много разных задач: экзамен, переезд, работа, вуз, медицина, бизнес. Поэтому план подбираем под человека.</p><p class="say">«Расскажи, зачем тебе язык, и мы подберём план и учителя».</p><div class="tags"><span>экзамены</span><span>работа и бизнес</span><span>медицина</span><span>план под тебя</span></div></div>
     </section>
 
     <!-- 5 · что сейчас заходит -->
@@ -377,135 +396,116 @@
       <div class="eyebrow">Пролистай и нажми на карточку</div>
       <h2>Что реально <em>залетает</em> у русскоязычных</h2>
       <div class="rail ui" id="rail">
-        <button class="fcard" aria-pressed="false"><img src="img/pen.jpg" alt=""><span class="ov"><b>Учитель и список слов</b><span class="gen">@kover_czech: учитель показывает на список «наверное — asi…». ×24 к обычным просмотрам.</span><span class="you">серия «5 слов, без которых не обойтись в Чехии»</span></span></button>
-        <button class="fcard" aria-pressed="false"><img src="img/write.jpg" alt=""><span class="ov"><b>Первый звонок врачу</b><span class="gen">«Главный страх любого иммигранта» ×53 и «Вы впервые записываетесь к врачу» ×47. Два разных аккаунта, одна боль.</span><span class="you">твоя тема про врача, только в рилсе</span></span></button>
         <button class="fcard" aria-pressed="false"><img src="img/kids.jpg" alt=""><span class="ov"><b>Дети за границей</b><span class="gen">Мама про сына и 1 сентября за границей ×201. Билингвальная дочь ×23. Родители смотрят такое запоем.</span><span class="you">рубрика «Два языка дома»</span></span></button>
         <button class="fcard" aria-pressed="false"><img src="img/move.jpg" alt=""><span class="ov"><b>Как меняешься за годы</b><span class="gen">«1 день в Германии… 5 лет» ×12 и «друг, который интегрировался за 4 года» ×10.</span><span class="you">рилс «Первый год после переезда»</span></span></button>
-        <button class="fcard" aria-pressed="false"><img src="img/exam.jpg" alt=""><span class="ov"><b>Запретное и обязательное</b><span class="gen">«Запретные жесты в Германии» у учителя немецкого ×40. Такое сохраняют и пересылают.</span><span class="you">«Что нельзя говорить в Чехии» на каждом языке</span></span></button>
-        <button class="fcard" aria-pressed="false"><img src="img/laptop.jpg" alt=""><span class="ov"><b>Экзамен-квиз</b><span class="gen">Школа немецкого: «Проверка, насколько ты готов к жизни в Германии» ×25, 1,4 млн просмотров.</span><span class="you">«Сдашь ли ты экзамен на ПМЖ?»</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/laptop.jpg" alt=""><span class="ov"><b>Экзамен-квиз</b><span class="gen">Школа немецкого: «Проверка, насколько ты готов к жизни в Германии» ×25, 1,4 млн просмотров.</span><span class="you">«Сдашь ли ты экзамен?» с таймером, как на IELTS</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/pen.jpg" alt=""><span class="ov"><b>Учитель и список слов</b><span class="gen">@kover_czech: учитель показывает на список «наверное — asi…». ×24 к обычным просмотрам.</span><span class="you">серия «5 слов, без которых не обойтись» на каждом языке</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/write.jpg" alt=""><span class="ov"><b>Первый звонок врачу</b><span class="gen">«Главный страх любого иммигранта» ×53 и «Вы впервые записываетесь к врачу» ×47. Два разных аккаунта, одна боль.</span><span class="you">твоя тема про врача, только в рилсе</span></span></button>
+        <button class="fcard" aria-pressed="false"><img src="img/exam.jpg" alt=""><span class="ov"><b>Запретное и обязательное</b><span class="gen">«Запретные жесты в Германии» у учителя немецкого ×40. Такое сохраняют и пересылают.</span><span class="you">«Что нельзя говорить в Испании, Германии, Чехии…»</span></span></button>
       </div>
       <div class="railnav ui"><div class="dots" id="dots"></div><div class="arrows"><button id="rPrev" aria-label="Предыдущая карточка">←</button><button id="rNext" aria-label="Следующая карточка">→</button></div></div>
       <p class="sub push">Мы разобрали 19 рилсов русскоязычных авторов за последние месяцы. ×N значит, во сколько раз ролик обогнал обычные просмотры своего аккаунта.</p>
     </section>
 
-    <!-- 6 · два стиля -->
+    <!-- 6 · что утвердили -->
     <section class="slide" data-i="5">
-      <div class="eyebrow">Стиль</div>
-      <h2>Предлагаем <em>два</em> направления</h2>
-      <div class="duo">
-        <figure><div class="post" data-m="now"><div class="now"><small>Фраза для ситуации</small><span class="dot"></span><b>Как записаться <em>к врачу</em></b><span>6 фраз для звонка</span><img src="img/logo.svg" alt=""></div></div><figcaption><b>1 · Минимализм</b>тихо и дорого: рамка, воздух, курсив</figcaption></figure>
-        <figure><div class="np"><span class="rub">Фраза для ситуации</span><div class="tx"><h3>6 фраз, чтобы <mark>позвонить</mark> <i>врачу</i></h3></div><img class="st" src="img/st-phone.webp" alt=""><span class="badge"><img src="img/logo_c.svg" alt=""></span><span class="sw2">листай →</span></div><figcaption><b>2 · Со стикерами</b>ярче, как у больших школ, свой стикерпак</figcaption></figure>
+      <div class="eyebrow">Где мы сейчас</div>
+      <h2>Что <em>утвердили</em>, что ещё выбираем</h2>
+      <div class="sw sw-mini">
+        <div style="background: var(--rose); color: var(--cream)"><b>Rosewood</b><span>#6B0B0C</span></div>
+        <div style="background: var(--olive); color: var(--cream)"><b>Олива</b><span>#6F6B34</span></div>
+        <div style="background: var(--cream)"><b>Крем</b><span>#F1E6D0</span></div>
+        <div style="background: var(--terra); color: var(--cream)"><b>Терракота</b><span>#B4502A</span></div>
+        <div style="background: var(--esp); color: var(--cream)"><b>Эспрессо</b><span>#2E2118</span></div>
+        <div style="background: var(--sage)"><b>Шалфей</b><span>#B8B48C</span></div>
       </div>
-      <p class="sub push">Дальше показываем оба. Можно и смешать: основа минималистичная, стикеры в отдельных рубриках.</p>
-    </section>
-
-    <!-- 6 · палитра -->
-    <section class="slide" data-i="6">
-      <div class="eyebrow">Стиль 1 · минимализм</div>
-      <h2>Собрали с твоей <em>доски</em></h2>
-      <div class="sw">
-        <div style="background: var(--rose); color: var(--cream)"><b>Rosewood</b><span>#6B0B0C · логотип</span></div>
-        <div style="background: var(--olive); color: var(--cream)"><b>Олива</b><span>#6F6B34 · чистая</span></div>
-        <div style="background: var(--cream)"><b>Крем</b><span>#F1E6D0 · фон</span></div>
-        <div style="background: var(--terra); color: var(--cream)"><b>Терракота</b><span>#B4502A · точкой</span></div>
-        <div style="background: var(--esp); color: var(--cream)"><b>Эспрессо</b><span>#2E2118 · текст</span></div>
-        <div style="background: var(--sage)"><b>Шалфей</b><span>#B8B48C · детали</span></div>
+      <div class="stat">
+        <div class="col ok"><b>Утвердили</b>
+          <span>Слоган «Помогаем пустить новые корни и не потерять свои»</span>
+          <span>Все шесть цветов и шрифты</span>
+          <span>Профиль из минимализма, карусели со стикерами</span>
+          <span>Аудитории, темы и рубрики</span>
+          <span>План на месяц и группы в Telegram</span>
+        </div>
+        <div class="col todo"><b>Выбираем</b>
+          <span>Стикерпак: линия, марки или бумага<i>→ 7</i></span>
+          <span>Палитра обложек: Rosewood, терракота и небо или микс<i>→ 8</i></span>
+          <span>Что доснять для ролика<i>→ 11</i></span>
+          <span>Фото, имена и цены учителей<i>→ 12</i></span>
+        </div>
       </div>
-      <div class="mood"><img src="img/paper.jpg" alt=""><img src="img/olive.jpg" alt=""><img src="img/linen.jpg" alt=""><img src="img/card.jpg" alt=""></div>
-      <p class="sub push">Бордовый из логотипа, олива без грязи, тёплый крем. Оранжевый остаётся только терракотовой точкой. Шрифт к логотипу: Cormorant, спокойный и дорогой.</p>
-    </section>
-
-    <!-- 7 · пост было / стало -->
-    <section class="slide" data-i="7">
-      <div class="eyebrow">Стиль 1 · тот же пост</div>
-      <h2>Тема твоя, <em>подача</em> новая</h2>
-      <div class="seg ui" id="postSeg"><button aria-pressed="false" data-m="was">Сейчас</button><button aria-pressed="true" data-m="now">Как будет</button></div>
-      <div class="post ui" id="post" data-m="now">
-        <div class="was"><small>Немецкий язык</small><b>Как записаться к врачу по телефону</b><span>6 готовых фраз, чтобы уверенно записаться на приём</span></div>
-        <div class="now"><small>Немецкий · фраза для ситуации</small><span class="dot"></span><b>Как записаться <em>к врачу</em></b><span>6 фраз для звонка. Сохрани, пригодится</span><img src="img/logo.svg" alt=""></div>
-      </div>
-      <p class="sub push">Тема у тебя отличная. Меняем только подачу: рамка, воздух, один акцент. Выглядит дороже и сразу узнаётся в ленте.</p>
-    </section>
-
-    <!-- 8 · лента -->
-    <section class="slide" data-i="8">
-      <div class="eyebrow">Стиль 1 · лента</div>
-      <h2>Так будет выглядеть <em>профиль</em></h2>
-      <div class="seg ui" id="gridSeg"><button aria-pressed="false" data-m="now">Сейчас</button><button aria-pressed="true" data-m="new">Как будет</button></div>
-      <div class="igp min ui" aria-label="Макет профиля Instagram">
-        <div class="top"><span>‹</span><span>newroots.school</span><span>···</span></div>
-        <div class="hd"><div class="ava"><div><img src="img/logo_c.svg" alt=""></div></div><div class="nums"><div><b>9</b>постов</div><div><b>—</b>подписчики</div><div><b>—</b>подписки</div></div></div>
-        <div class="bio"><b>New Roots · языковая школа</b><span class="c">Образование</span><span>Помогаем пустить новые корни</span><span>Чешский, немецкий, испанский, итальянский, португальский</span><span>Русский для детей за границей</span><span>Подобрать учителя ↓</span><u>newroots.school</u></div>
-        <div class="btn"><span>Подписаться</span><span>Сообщение</span></div>
-        <div class="hls"><div class="hl"><i><img src="img/pen.jpg" alt=""></i>Учителя</div><div class="hl"><i><img src="img/book.jpg" alt=""></i>Цены</div><div class="hl"><i><img src="img/flowers.jpg" alt=""></i>Детям</div><div class="hl"><i><img src="img/laptop.jpg" alt=""></i>Уроки</div><div class="hl"><i><img src="img/tram.jpg" alt=""></i>Отзывы</div></div>
-        <div class="tb"><span>▦</span><span>▶</span><span>☺</span></div>
-        <div class="grid9" id="grid9"></div>
-      </div>
-      <p class="sub push">Листай внутри телефона. Фото, текст в рамке, фото: рубрики чередуются, цвета повторяются, и через 9 постов это уже бренд.</p>
     </section>
 
     <!-- 10 · стиль 2: стикеры -->
-    <section class="slide" data-i="9">
-      <div class="eyebrow">Стиль 2 · со стикерами</div>
-      <h2>Свой <em>стикерпак</em> для школы</h2>
-      <div class="stk6"><figure><img src="img/st-roots.webp" alt="Росток с корнями"><b>Росток с корнями</b></figure><figure><img src="img/st-phone.webp" alt="Звонок"><b>Звонок</b></figure><figure><img src="img/st-bubbles.webp" alt="Диалог"><b>Диалог</b></figure><figure><img src="img/st-docs.webp" alt="Документы"><b>Документы</b></figure><figure><img src="img/st-tram.webp" alt="Трамвай"><b>Трамвай</b></figure><figure><img src="img/st-cat.webp" alt="Кот-талисман"><b>Кот-талисман</b></figure></div>
-      <p class="sub push">Рисуем стикеры под New Roots в цветах логотипа. Они живут на постах, в хайлайтах и рилсах, поэтому в ленте всегда есть что-то кроме текста. Людей не рисуем. Набор можно пополнять под новые рубрики.</p>
+    <section class="slide" data-i="6">
+      <div class="eyebrow">Стикерпаки · выбери один</div>
+      <h2>Три набора, <em>строже</em> и взрослее</h2>
+      <div class="seg ui" id="stkSeg"><button aria-pressed="false" data-k="line">Линия</button><button aria-pressed="false" data-k="stamp">Марки</button><button aria-pressed="true" data-k="paper">Бумага</button></div>
+      <div class="stk6" id="stk6"></div>
+      <p class="sub push">Тонкая линия, винтажные марки или бумажная аппликация. Без мультяшности и без корней в лоб. Выбранный набор сразу встаёт в обложки на следующих слайдах.</p>
     </section>
 
     <!-- 11 · стиль 2: профиль -->
-    <section class="slide" data-i="10">
-      <div class="eyebrow">Стиль 2 · профиль</div>
-      <h2>Три палитры, <em>выбери</em> свою</h2>
-      <div class="seg ui" id="palSeg"><button aria-pressed="true" data-p="a">Rosewood</button><button aria-pressed="false" data-p="b">Олива и горчица</button><button aria-pressed="false" data-p="c">Терракота и небо</button></div>
+    <section class="slide" data-i="7">
+      <div class="eyebrow">Единый стиль</div>
+      <h2>Лучшее <em>из двух</em> стилей</h2>
+      <div class="seg ui" id="palSeg"><button aria-pressed="true" data-p="a">Rosewood · основная</button><button aria-pressed="false" data-p="c">Терракота и небо</button><button aria-pressed="false" data-p="m">Микс трёх</button></div>
       <div class="igp ui" aria-label="Макет профиля Instagram">
         <div class="top"><span>‹</span><span>newroots.school</span><span>···</span></div>
         <div class="hd"><div class="ava"><div><img src="img/logo_c.svg" alt=""></div></div><div class="nums"><div><b>9</b>постов</div><div><b>—</b>подписчики</div><div><b>—</b>подписки</div></div></div>
-        <div class="bio"><b>New Roots · языковая школа</b><span class="c">Образование</span><span>Помогаем пустить новые корни 🌱</span><span>Чешский, немецкий, испанский, итальянский, португальский</span><span>Русский для детей за границей</span><span>👇 Подобрать учителя</span><u>newroots.school</u></div>
+        <div class="bio"><b>New Roots · языковая школа</b><span class="c">Образование</span><span>Помогаем пустить новые корни и не потерять свои</span><span>Языки для жизни за границей. И русский тоже</span><span>Детям, взрослым, к экзаменам</span><span>Подобрать учителя ↓</span><u>newroots.school</u></div>
         <div class="btn"><span>Подписаться</span><span>Сообщение</span></div>
-        <div class="hls"><div class="hl"><i><img src="img/st-bubbles.webp" alt=""></i>Учителя</div><div class="hl"><i><img src="img/st-docs.webp" alt=""></i>Цены</div><div class="hl"><i><img src="img/st-roots.webp" alt=""></i>Детям</div><div class="hl"><i><img src="img/st-phone.webp" alt=""></i>Уроки</div><div class="hl"><i><img src="img/st-cat.webp" alt=""></i>Отзывы</div></div>
+        <div class="hls"><div class="hl"><i><img src="img/pen.jpg" alt=""></i>Учителя</div><div class="hl"><i><img src="img/book.jpg" alt=""></i>Языки</div><div class="hl"><i><img src="img/flowers.jpg" alt=""></i>Детям</div><div class="hl"><i><img src="img/laptop.jpg" alt=""></i>Первый урок</div><div class="hl"><i><img src="img/tram.jpg" alt=""></i>Отзывы</div></div>
         <div class="tb"><span>▦</span><span>▶</span><span>☺</span></div>
         <div class="g9" id="g9s"></div>
       </div>
-      <p class="sub push">Листай внутри телефона. Шрифты и рамка наши во всех трёх вариантах, меняются только цвета.</p>
+      <p class="sub push">Профиль и цвета из первого стиля, карусели со стикерами из второго. Rosewood основная, терракота и небо вторым вариантом, или микс: обложки по очереди в трёх прежних палитрах. Листай внутри телефона.</p>
     </section>
 
     <!-- 12 · стиль 2: шаблоны -->
-    <section class="slide" data-i="11">
-      <div class="eyebrow">Стиль 2 · шаблоны</div>
+    <section class="slide" data-i="8">
+      <div class="eyebrow">Карусели · обложки</div>
       <h2>Обложки, <em>которые цепляют</em></h2>
       <div class="rail trail ui" id="trail"></div>
       <div class="railnav ui"><div class="dots" id="tdots"></div><div class="arrows"><button id="tPrev" aria-label="Предыдущая обложка">←</button><button id="tNext" aria-label="Следующая обложка">→</button></div></div>
-      <p class="sub push">Короткий жирный заголовок, одно слово в плашке, стикер и «листай». Листай обложки пальцем или стрелками. Цвета берутся из палитры, которую ты выбрал на прошлом слайде.</p>
+      <p class="sub push">Верх как был: жирный заголовок и слово в плашке. Внизу стикер из выбранного набора и наш логотип прямо на фоне, без квадрата. Цвета из палитры на прошлом слайде.</p>
     </section>
 
     <!-- 9 · рубрики -->
-    <section class="slide" data-i="12">
+    <section class="slide" data-i="9">
       <div class="eyebrow">Рубрики</div>
-      <h2>Шесть рубрик, <em>нажми</em> на каждую</h2>
+      <h2>Семь рубрик, <em>нажми</em> на каждую</h2>
       <div class="acc ui">
-        <button aria-expanded="true"><span class="t">Знакомьтесь, учитель</span><span class="n k">главная</span><span class="why">Кто он, сколько живёт в стране, как сам учил язык. 30 секунд, и человек уже хочет к нему.</span></button>
-        <button aria-expanded="false"><span class="t">Фраза для ситуации</span><span class="n">сохраняют</span><span class="why">Карусель: врач, банк, школа, транспорт. У тебя такое уже есть, просто в новом стиле.</span></button>
-        <button aria-expanded="false"><span class="t">Два языка дома</span><span class="n k">детям</span><span class="why">Для родителей: как сохранить русский или украинский. Игры, книги, мультики, маленькие победы.</span></button>
-        <button aria-expanded="false"><span class="t">Бюрократия без паники</span><span class="n">взрослым</span><span class="why">Пошагово: документы, запись, письма. Каждый шаг с нужной фразой на языке.</span></button>
-        <button aria-expanded="false"><span class="t">Задание с экзамена</span><span class="n">цель</span><span class="why">Одно задание с ПМЖ или гражданства, ответ в комментариях. Вовлекает и показывает уровень учителей.</span></button>
+        <button aria-expanded="true"><span class="t">Знакомьтесь, учитель</span><span class="n k">главная</span><span class="why">Кто он, какой язык ведёт, в чём силён: экзамены, медицина, бизнес. 30 секунд, и человек уже хочет к нему.</span></button>
+        <button aria-expanded="false"><span class="t">Задание с экзамена</span><span class="n k">вовлекает</span><span class="why">Зритель будто сам сдаёт экзамен, как на IELTS: задание, таймер бежит, ответ в конце. Показывает уровень учителей.</span></button>
+        <button aria-expanded="false"><span class="t">Два языка дома</span><span class="n k">детям</span><span class="why">Для родителей: как сохранить русский, пока ребёнок учит местный. Игры, книги, мультики, маленькие победы.</span></button>
         <button aria-expanded="false"><span class="t">Истории переезда</span><span class="n">доверие</span><span class="why">Ученики и учителя про первый год. Это и есть твоё «вы не одни, нас тут много».</span></button>
+        <button aria-expanded="false"><span class="t">Добились в эмиграции</span><span class="n">вдохновляет</span><span class="why">Люди, которые построили карьеру и жизнь в новой стране. Почему образование и язык решили всё.</span></button>
+        <button aria-expanded="false"><span class="t">Что нового в стране</span><span class="n">взрослым</span><span class="why">Коротко о том, что меняется в стране: визы, жильё, правила. Новость и пара полезных фраз к ней.</span></button>
+        <button aria-expanded="false"><span class="t">Одна ситуация, пять языков</span><span class="n">сохраняют</span><span class="why">Одна фраза на всех языках школы: «запишите меня к врачу», «я тебя люблю». Каждый находит свой язык.</span></button>
       </div>
     </section>
 
     <!-- 10 · демо-рилс -->
-    <section class="slide" data-i="13">
-      <div class="eyebrow">Демо-рилс · 25 секунд</div>
-      <h2>Первый год <em>после переезда</em></h2>
-      <div class="player ui">
-        <video id="demo" src="video/demo.mp4" poster="video/demo_poster.jpg" muted loop playsinline preload="metadata"></video>
-        <button id="snd" aria-label="Включить звук">🔇 нажми для звука</button>
+    <section class="slide" data-i="10">
+      <div class="eyebrow">Ролик · что оставляем</div>
+      <h2>Подача ок, <em>кадры</em> доснимем</h2>
+      <div class="shots">
+        <figure><img src="img/demo-18.jpg" alt=""><figcaption><b>✓ Текст на плашке</b> шрифт и подача фраз</figcaption></figure>
+        <figure><img src="img/demo-20.jpg" alt=""><figcaption><b>✓ Слоган и языки</b> оливковый слайд с плашками</figcaption></figure>
+        <figure><img src="img/demo-24.5.jpg" alt=""><figcaption><b>✓ Концовка</b> логотип, кнопка, звук</figcaption></figure>
       </div>
-      <p class="sub">Рубрика «Истории переезда» в рилсе. Хук про звонок врачу (такие у русскоязычных залетают в десятки раз), дальше год по месяцам, в конце твой слоган.</p>
-      <p class="sub">Это набросок из стоков, чтобы показать идею. Снимем то же с твоими учителями.</p>
+      <div class="doshoot"><b>Доснять для полного фарша</b>
+        <span>Ваши учителя в кадре вместо стоков: знакомство и живая речь</span>
+        <span>Урок в Zoom: экран и реакция ученика</span>
+        <span>Семья дома, ребёнок и два языка, с согласия родителей</span>
+        <span>Город и быт: кафе, транспорт, звонок, подписи на 2–3 языках</span>
+        <span>Детали школы: тетради, руки, экран, доска</span>
+      </div>
     </section>
 
     <!-- 10 · карточки учителей -->
-    <section class="slide" data-i="14">
+    <section class="slide" data-i="11">
       <div class="eyebrow">Карточки учителей</div>
       <h2>Как ты хотела, <em>только красиво</em></h2>
       <div class="langs ui" id="langs"></div>
@@ -514,7 +514,7 @@
     </section>
 
     <!-- 11 · как проходит учёба -->
-    <section class="slide" data-i="15">
+    <section class="slide" data-i="12">
       <div class="eyebrow">Как проходит учёба</div>
       <h2>Всё просто и <em>понятно</em></h2>
       <ol class="steps"><li>Выбрал учителя по карточке</li><li>Взял абонемент на 4, 8 или 16 уроков</li><li>Урок в Zoom или Google Meet</li><li>Своя группа в Telegram: ты, учитель, ученик</li></ol>
@@ -527,13 +527,13 @@
     </section>
 
     <!-- 13 · план запуска -->
-    <section class="slide" data-i="16">
+    <section class="slide" data-i="13">
       <div class="eyebrow">Запуск с нуля</div>
       <h2>Первый месяц <em>по неделям</em></h2>
       <div class="tabs t4 ui" role="tablist" data-g="plan">
         <button class="tab" role="tab" aria-selected="true" data-w="0">Нед. 1</button><button class="tab" role="tab" aria-selected="false" data-w="1">Нед. 2</button><button class="tab" role="tab" aria-selected="false" data-w="2">Нед. 3</button><button class="tab" role="tab" aria-selected="false" data-w="3">Нед. 4</button>
       </div>
-      <div class="wk on ui" data-g="plan"><h3>Упаковка <em>профиля</em></h3><div class="tags"><span>новое био</span><span>аватар с логотипом</span><span>хайлайты: Учителя, Цены, Детям, Как учимся</span><span>первые 9 постов</span></div></div>
+      <div class="wk on ui" data-g="plan"><h3>Упаковка <em>профиля</em></h3><div class="tags"><span>новое био</span><span>аватар с логотипом</span><span>хайлайты: Учителя, Языки, Детям, Первый урок, Отзывы</span><span>первые 9 постов</span></div></div>
       <div class="wk ui" data-g="plan"><h3>Знакомство <em>со школой</em></h3><div class="tags"><span>рилс «Зачем New Roots»</span><span>2 учителя знакомятся</span><span>2 фразы для ситуации</span></div></div>
       <div class="wk ui" data-g="plan"><h3>Неделя <em>для детей</em></h3><div class="tags"><span>рилс «Два языка дома»</span><span>советы родителям</span><span>опрос в сторис</span></div></div>
       <div class="wk ui" data-g="plan"><h3>Выход <em>к людям</em></h3><div class="tags"><span>русскоязычные чаты в разных странах</span><span>коллаб с мамой-блогером в эмиграции</span><span>пробное занятие</span></div></div>
@@ -558,12 +558,6 @@
     count.textContent = (cur + 1) + " / " + N;
     if (typeof syncDemo === "function") syncDemo();
   }
-  // демо-рилс играет без звука, пока открыт его слайд; звук по нажатию
-  const demo = document.getElementById("demo"), snd = document.getElementById("snd"), demoSlide = demo.closest(".slide");
-  function syncDemo() { if (slides[cur] === demoSlide) { demo.play().catch(() => {}); } else { demo.pause(); } }
-  snd.addEventListener("click", (e) => { e.stopPropagation(); demo.muted = !demo.muted; if (!demo.muted) { demo.currentTime = 0; demo.play().catch(() => {}); }
-    snd.textContent = demo.muted ? "🔇 нажми для звука" : "🔊 звук включён"; });
-  demo.addEventListener("click", (e) => { e.stopPropagation(); demo.paused ? demo.play() : demo.pause(); });
   const next = () => show(cur + 1), prev = () => show(cur - 1);
   document.getElementById("bNext").onclick = next; document.getElementById("bPrev").onclick = prev;
   addEventListener("keydown", (e) => { if (e.key === "ArrowRight") next(); if (e.key === "ArrowLeft") prev(); });
@@ -574,10 +568,9 @@
   const press = (group, b) => group.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
 
   // 3 · слоган
-  const SL = [["твой вариант", "Помогаем пустить <em>новые корни</em>"], ["про обе аудитории", "Новые корни. <em>Свои</em> корни."], ["тёплый", "Язык, на котором живёшь. <em>Язык, на котором любишь.</em>"],
-    ["про дом", "Чтобы здесь <em>было как дома</em>"], ["про поддержку", "Ты здесь <em>не один</em>. Нас много."], ["про переезд", "Новый дом начинается <em>с языка</em>"],
-    ["для родителей", "Местный язык для школы. <em>Родной</em> для дома."], ["коротко", "Говори там, <em>где живёшь</em>"]];
-  document.getElementById("sloganSeg").innerHTML = SL.map((_, k) => `<button aria-pressed="${k === 0}" data-s="${k}">${k === 0 ? "Твой" : k + 1}</button>`).join("");
+  const SL = [["основной", "Помогаем пустить <em>новые корни</em> и не потерять свои"], ["в подписях и рилсах", "Новые корни. <em>Свои</em> корни."],
+    ["в сторис и тёплых постах", "Чтобы здесь <em>было как дома</em>"], ["коротко, для обложек", "Помогаем пустить <em>новые корни</em>"]];
+  document.getElementById("sloganSeg").innerHTML = SL.map((_, k) => `<button aria-pressed="${k === 0}" data-s="${k}">${k === 0 ? "Главный" : k + 1}</button>`).join("");
   const slBtns = [...document.querySelectorAll("#sloganSeg button")];
   const setSlogan = (k) => { document.getElementById("slogan").innerHTML = SL[k][1]; document.getElementById("sloganK").textContent = SL[k][0]; press(slBtns, slBtns[k]); };
   slBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); setSlogan(+b.dataset.s); }));
@@ -602,21 +595,31 @@
 
   // стиль 2: посты из шаблона, палитра на всю колоду
   const NP = {
+    love: ["Живой язык", "Как сказать <mark>«люблю»</mark> на <i>10 языках</i>", "heart", 0, ""],
+    games: ["Два языка дома", "3 игры, чтобы <mark>не забыть</mark> <i>русский</i>", "bubbles", 1, ""],
+    memo: ["Лайфхак", "Как <mark>запоминать</mark> слова <i>взрослому</i>", "book", 0, ""],
+    lesson: ["Как учимся", "Как проходит <mark>первый</mark> <i>урок</i>", "phone", 1, ""],
+    slang: ["Без цензуры", "Фразы, которых <mark>нет</mark> в учебнике", "suitcase", 0, '<span class="r18">18+</span>'],
+    news: ["Что нового", "Что изменилось <mark>в Испании</mark>", "passport", 1, "визы, жильё, правила 👇"],
     call: ["Фраза для ситуации", "6 фраз, чтобы <mark>позвонить</mark> <i>врачу</i>", "phone", 0, ""],
-    ahoj: ["Живой язык", "Забудь про <mark>«Dobrý den»</mark> с друзьями", "cat", 1, "Говори просто «Ahoj» 👋"],
-    docs: ["Без паники", "5 слов из <mark>письма</mark> <i>ведомства</i>", "docs", 0, ""],
-    kids: ["Два языка дома", "3 игры, чтобы <mark>не забыть</mark> <i>русский</i>", "roots", 1, ""],
-    tram: ["В городе", "Знаешь, где <mark>выходить?</mark>", "tram", 0, "5 фраз для трамвая 🚋"],
-    lesson: ["Как учимся", "Как проходит <mark>первый</mark> <i>урок</i>", "bubbles", 1, ""],
   };
+  const PACKS = { line: "Линия", stamp: "Марки", paper: "Бумага" };
+  const SUBJ = [["phone", "Звонок"], ["bubbles", "Диалог"], ["passport", "Паспорт"], ["book", "Книга"], ["heart", "Сердце-письмо"], ["suitcase", "Чемодан"]];
+  let stkPack = "paper";
   const np = (k) => { const [r, h, st, dk, sb] = NP[k];
-    return `<div class="np${dk ? " dk" : ""}"><span class="rub">${r}</span><div class="tx"><h3>${h}</h3>${sb ? `<span class="sb">${sb}</span>` : ""}</div><img class="st" src="img/st-${st}.webp" alt=""><span class="badge"><img src="img/logo_c.svg" alt=""></span><span class="sw2">листай →</span></div>`; };
+    return `<div class="np${dk ? " dk" : ""}"><span class="rub">${r}</span><div class="tx"><h3>${h}</h3>${sb ? `<span class="sb">${sb}</span>` : ""}</div><img class="st" src="img/st2-${stkPack}-${st}.webp" alt=""><img class="lg" src="img/${dk ? "logo_c" : "logo"}.svg" alt=""><span class="sw2">листай →</span></div>`; };
   const nph = (src, r) => `<div class="np ph" style="background-image:url(img/${src})"><span class="rub">${r}</span></div>`;
-  document.getElementById("g9s").innerHTML = [np("call"), nph("pen.jpg", "Учитель"), np("ahoj"), np("kids"), np("tram"), nph("tram.jpg", "История"), nph("flowers.jpg", "Школа"), np("lesson"), np("docs")].join("");
-  document.getElementById("trail").innerHTML = Object.keys(NP).map(np).join("");
-  { const tr = document.getElementById("trail"), tc = [...tr.children], td = document.getElementById("tdots");
-    td.innerHTML = tc.map(() => "<i></i>").join("");
-    const st = () => tc[1].offsetLeft - tc[0].offsetLeft;
+  function renderStk() {
+    document.getElementById("stk6").innerHTML = SUBJ.map(([k, n]) => `<figure><img src="img/st2-${stkPack}-${k}.webp" alt="${n}"><b>${n}</b></figure>`).join("");
+    document.getElementById("g9s").innerHTML = [np("love"), nph("pen.jpg", "Учитель"), np("games"), np("lesson"), nph("kids.jpg", "Дети"), np("memo"), nph("tram.jpg", "История"), np("slang"), np("news")].join("");
+    const tr = document.getElementById("trail"), keep = tr.scrollLeft; tr.innerHTML = Object.keys(NP).map(np).join(""); tr.scrollLeft = keep;
+  }
+  renderStk();
+  const stkBtns = [...document.querySelectorAll("#stkSeg button")];
+  stkBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); stkPack = b.dataset.k; press(stkBtns, b); renderStk(); }));
+  { const tr = document.getElementById("trail"), td = document.getElementById("tdots");
+    td.innerHTML = Object.keys(NP).map(() => "<i></i>").join("");
+    const st = () => tr.children[1].offsetLeft - tr.children[0].offsetLeft;
     const sy = () => { const k = Math.round(tr.scrollLeft / st()); [...td.children].forEach((d, i) => d.classList.toggle("on", i === k)); };
     tr.addEventListener("scroll", sy, { passive: true }); sy();
     document.getElementById("tNext").onclick = (e) => { e.stopPropagation(); tr.scrollBy({ left: st() }); };
@@ -624,49 +627,25 @@
   const palBtns = [...document.querySelectorAll("#palSeg button")];
   palBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); deck.dataset.pal = b.dataset.p; press(palBtns, b); }));
 
-  // 7 · пост было/стало
-  const postBtns = [...document.querySelectorAll("#postSeg button")];
-  postBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); document.getElementById("post").dataset.m = b.dataset.m; press(postBtns, b); }));
-
-  // 8 · сетка профиля
-  const g9 = document.getElementById("grid9");
-  const NOW = [["#fbefcb", "", "#d4543a"], ["#d4543a", "Как записаться к врачу по телефону", "#fbefcb"], ["#fbefcb", "Как разобраться в метро", "#d4543a"], ["#d4543a", "", ""], ["#fbefcb", "", ""], ["#d4543a", "", ""], ["#fbefcb", "", ""], ["#d4543a", "", ""], ["#fbefcb", "", ""]];
-  const NEW = [["img/pen.jpg", "", ""], ["#f1e6d0", "Как записаться к врачу", "#6b0b0c"], ["img/kids.jpg", "", ""], ["#6b0b0c", "Два языка дома", "#f1e6d0"], ["img/olive.jpg", "", ""], ["#6f6b34", "Знакомьтесь, учитель", "#f1e6d0"], ["#f1e6d0", "Задание с экзамена", "#6b0b0c"], ["img/tram.jpg", "", ""], ["#b4502a", "Истории переезда", "#f1e6d0"]];
-  for (let k = 0; k < 9; k++) g9.appendChild(Object.assign(document.createElement("div"), { innerHTML: "<span></span>" }));
-  const gridBtns = [...document.querySelectorAll("#gridSeg button")];
-  function grid(mode) {
-    [...g9.children].forEach((c, k) => {
-      const [bg, t, fg] = (mode === "now" ? NOW : NEW)[k], s = c.firstChild;
-      c.style.background = bg.startsWith("img/") ? `center / cover no-repeat url(${bg})` : bg;
-      c.style.boxShadow = mode === "new" && !bg.startsWith("img/") ? `inset 0 0 0 5px ${bg}, inset 0 0 0 6px ${fg}` : "none";
-      s.textContent = t; s.style.color = fg;
-      s.style.fontFamily = mode === "now" ? "Georgia, serif" : "var(--serif)"; s.style.fontSize = mode === "now" ? "0.65em" : "1em";
-      s.style.textTransform = mode === "now" ? "uppercase" : "none"; s.style.fontWeight = mode === "now" ? "400" : "600";
-    });
-    press(gridBtns, gridBtns[mode === "now" ? 0 : 1]);
-  }
-  gridBtns.forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); grid(b.dataset.m); }));
-  grid("new");
-
   // 9 · рубрики
   document.querySelectorAll(".acc button").forEach((b) => b.addEventListener("click", (e) => {
     e.stopPropagation(); document.querySelectorAll(".acc button").forEach((x) => x.setAttribute("aria-expanded", String(x === b)));
   }));
 
   // 10 · карточки учителей (шаблон, учителя условные)
-  const L = [["Чешский", "в Чехии"], ["Немецкий", "в Германии"], ["Испанский", "в Испании"], ["Итальянский", "в Италии"], ["Португальский", "в Португалии"], ["Русский для детей", ""]];
+  const L = [["Чешский", "в Чехии"], ["Немецкий", "в Германии"], ["Испанский", "в Испании"], ["Итальянский", "в Италии"], ["Португальский", "в Португалии"], ["Русский", ""]];
   const langs = document.getElementById("langs"), tcards = document.getElementById("tcards");
   langs.innerHTML = L.map(([n], k) => `<button aria-pressed="${k === 0}" data-k="${k}">${n}</button>`).join("");
   const pack = '<ul><li>4 урока<i>цена</i></li><li>8 уроков<i>цена</i></li><li>16 уроков<i>цена</i></li></ul>';
   function teachers(k) {
     const [n, where] = L[k];
     const a = k === 5
-      ? ["Педагог", "Имя учителя", "Русский язык для детей 6+ в эмиграции. Игры, чтение, письмо."]
-      : ["Говорит по-русски", "Имя учителя", `Живёт ${where} N лет, сертификат. Начальные уровни.`];
+      ? ["Педагог", "Имя учителя", "дети 6+ · школьные предметы", "Русский для детей в эмиграции. Игры, чтение, письмо."]
+      : ["Говорит по-русски", "Имя учителя", "подготовка к экзамену", `Живёт ${where} N лет, сертификат. Все уровни.`];
     const b = k === 5
-      ? ["Педагог", "Имя учителя", "Украинский для детей. Можно добавить, если решишь."]
-      : ["Носитель", "Имя учителя", "Для тех, кто хочет говорить свободно и готовится к экзамену."];
-    tcards.innerHTML = [a, b].map(([t, nm, p]) => `<div class="tc"><div class="ph"><span>фото учителя</span></div><span class="k">${n} · ${t}</span><b>${nm}</b><p>${p}</p>${pack}<span class="from">от 25 € за урок</span></div>`).join("");
+      ? ["Педагог", "Имя учителя", "взрослым · деловой русский", "Для взрослых и детей постарше: грамотность, речь, деловое письмо."]
+      : ["Носитель", "Имя учителя", "медицина · бизнес", "Для тех, кто хочет говорить свободно: работа, врачи, переговоры."];
+    tcards.innerHTML = [a, b].map(([t, nm, sp, p]) => `<div class="tc"><div class="ph"><span>фото учителя</span></div><span class="k">${n} · ${t}</span><b>${nm}</b><span class="spec">${sp}</span><p>${p}</p>${pack}<span class="from">от 25 € за урок</span></div>`).join("");
     press([...langs.children], langs.children[k]);
   }
   [...langs.children].forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); teachers(+b.dataset.k); }));
